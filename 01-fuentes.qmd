@@ -1,0 +1,149 @@
+---
+engine: markdown
+---
+
+# Unidad 1. Introducción. Fuentes de información {#sec-u1}
+
+::: {.callout-note appearance="default"}
+## Objetivos
+- Reconocer la sobrecarga informativa y los distintos tipos de desinformación.
+- Usar la información digital de forma crítica, reflexiva y proactiva.
+- Identificar, seleccionar y evaluar fuentes de información, incluidas las redes sociales como fuente científica.
+:::
+
+::: {.callout-note appearance="simple" icon="false"}
+## Glosario de la unidad
+[Sobrecarga informativa](92-glosario.qmd#gl-sobrecarga) · [Desinformación](92-glosario.qmd#gl-desinformacion) · [Información errónea](92-glosario.qmd#gl-erronea) · [Credibilidad](92-glosario.qmd#gl-credibilidad) · [Lectura lateral](92-glosario.qmd#gl-lateral) · [Método SIFT](92-glosario.qmd#gl-sift) · [Fuente primaria](92-glosario.qmd#gl-primaria) · [Revisión por pares](92-glosario.qmd#gl-pares) · [Altmetría](92-glosario.qmd#gl-altmetria)
+:::
+
+::: {.callout-tip appearance="simple" icon="false"}
+## Descargas
+[Plantilla de entrega del reto (.qmd)](plantillas/entrega_reto.qmd){.btn .btn-outline-primary .btn-sm download="entrega_reto.qmd"}
+[Tema de estilo (.scss)](plantillas/informe.scss){.btn .btn-outline-primary .btn-sm download="informe.scss"}
+
+La plantilla `.qmd` y su tema `.scss` sirven para redactar la entrega de los retos: guárdalos en la misma carpeta.
+:::
+
+## Lectura obligatoria
+
+::: {.lectura}
+Metzger, M. J.; Flanagin, A. J. (2013). [Credibility and trust of information in online environments: The use of cognitive heuristics](https://doi.org/10.1016/j.pragma.2013.07.012). *Journal of Pragmatics*, 59, 210-220.
+:::
+
+### Lecturas complementarias {.unnumbered}
+
+- Bawden, D.; Robinson, L. (2009). [The dark side of information: Overload, anxiety and other paradoxes and pathologies](https://doi.org/10.1177/0165551508095781). *Journal of Information Science*, 35(2), 180-191. La sobrecarga informativa y sus efectos.
+- Pennycook, G.; Rand, D. G. (2021). [The psychology of fake news](https://doi.org/10.1016/j.tics.2021.02.007). *Trends in Cognitive Sciences*, 25(5), 388-402. Por qué creemos y compartimos noticias falsas.
+- Sugimoto, C. R.; Work, S.; Larivière, V.; Haustein, S. (2017). [Scholarly use of social media and altmetrics: A review of the literature](https://doi.org/10.1002/asi.23833). *Journal of the Association for Information Science and Technology*, 68(9), 2037-2062.
+
+## 1. Información, sobrecarga y desinformación
+
+Nunca ha sido tan fácil acceder a información, y nunca ha sido tan difícil saber cuál es fiable. Bawden y Robinson (2009) describen el «lado oscuro» de la información: la **sobrecarga informativa** (más información de la que se puede procesar), la ansiedad que provoca y otros efectos paradójicos, como sentirse peor informado cuanta más información se recibe.
+
+En el terreno de la información falsa conviene distinguir:
+
+| Tipo | Qué es | Ejemplo |
+|---|---|---|
+| **Información errónea** (*misinformation*) | Falsa, pero se comparte sin intención de engañar | Reenviar un remedio casero ineficaz creyendo que funciona |
+| **Desinformación** (*disinformation*) | Falsa y creada o difundida para engañar | Una campaña con datos inventados para influir en unas elecciones |
+| **Información maliciosa** (*malinformation*) | Verdadera, pero usada para causar daño | Difundir datos personales reales de alguien |
+
+Pennycook y Rand (2021) muestran que mucha gente comparte información falsa no tanto por sesgo ideológico como por **falta de atención**: no se para a pensar si es verdad antes de compartirla. Una pausa breve mejora el juicio.
+
+## 2. Uso crítico, reflexivo y proactivo
+
+Metzger y Flanagin (2013) explican que, en línea, las personas no evalúan la credibilidad de forma sistemática, sino con **atajos mentales** (heurísticos): la **reputación** (una marca conocida parece fiable), el **respaldo** de otros (muchas reseñas o «me gusta»), la **coherencia** (lo que se repite en varios sitios), la **violación de expectativas** (un diseño descuidado o errores hacen desconfiar) y la **intención persuasiva** (si parece que quieren vender algo, desconfiamos). Esos atajos son útiles, pero se pueden explotar: una web falsa puede imitar una marca conocida y las reseñas se pueden comprar.
+
+Un uso crítico de la información consiste en sustituir, cuando importa, el atajo por la comprobación. Para eso funciona mejor la **lectura lateral** que la lectura vertical: en lugar de analizar a fondo la página (que puede estar diseñada para parecer fiable), se abren otras pestañas para averiguar qué dicen **otros** sobre esa fuente y esa afirmación. Es lo que hacen los verificadores profesionales.
+
+El método **SIFT**, propuesto por Mike Caulfield, resume la lectura lateral en cuatro pasos:
+
+1. **Para** (*Stop*): antes de leer o compartir, pregúntate si conoces la fuente.
+2. **Investiga la fuente** (*Investigate the source*): quién está detrás y qué intereses tiene.
+3. **Busca mejor cobertura** (*Find better coverage*): qué dicen otras fuentes fiables sobre lo mismo.
+4. **Rastrea hasta el original** (*Trace claims*): busca la fuente primaria de la afirmación, la cita o la imagen.
+
+![Lectura vertical frente a lectura lateral. La lateral sale de la página para comprobar la fuente y la afirmación en otras fuentes.](figuras/u1_lateral.svg){#fig-lateral fig-alt="A la izquierda, una sola página web con una flecha que baja por ella: lectura vertical. A la derecha, la misma página con flechas que salen hacia tres pestañas: qué dicen otros de la fuente, qué dicen otras fuentes sobre lo mismo y la fuente original de la afirmación."}
+
+## 3. Identificar, seleccionar y evaluar fuentes
+
+Las fuentes se suelen clasificar en **primarias** (información original: un artículo de investigación, unos datos, una ley, una entrevista), **secundarias** (analizan o resumen las primarias: una revisión, un libro de texto, una noticia sobre un estudio) y **terciarias** (ayudan a encontrar las anteriores: catálogos, bases de datos, enciclopedias).
+
+Para seleccionarlas, la pregunta clave es **qué necesito**: una definición, datos actualizados, la evidencia científica sobre un tema, la normativa vigente. Para evaluarlas, una lista útil es:
+
+| Criterio | Preguntas |
+|---|---|
+| **Autoría** | ¿Quién lo firma? ¿Tiene conocimiento del tema? ¿Hay una organización responsable? |
+| **Propósito** | ¿Informa, opina, vende, persuade? |
+| **Actualidad** | ¿Cuándo se publicó o se actualizó? ¿Importa la fecha para tu tema? |
+| **Exactitud** | ¿Cita sus fuentes? ¿Se puede comprobar? ¿Coincide con otras fuentes fiables? |
+| **Revisión** | ¿Ha pasado una revisión por pares, una edición profesional o ningún control? |
+
+## 4. Las redes sociales como fuente de información científica
+
+Las redes sociales se usan cada vez más para difundir y comentar la ciencia. Sugimoto et al. (2017) revisan cómo las usan los investigadores y cómo se miden esas menciones (**altmetría**). Para una estudiante, las redes pueden servir para **descubrir** investigaciones y debates recientes, pero no son la fuente: hay que llegar al artículo original. Conviene recordar que:
+
+- Una publicación viral sobre un estudio puede exagerar o malinterpretar sus resultados.
+- Las menciones en redes miden **atención**, no calidad ni veracidad.
+- Los preprints (versiones previas a la revisión por pares) se difunden mucho en redes y pueden cambiar o no publicarse.
+
+## Práctica
+
+Elige una afirmación llamativa que hayas visto esta semana en redes sociales. Aplica los cuatro pasos de SIFT y anota cuánto tiempo te ha llevado y qué has encontrado en cada paso. Compáralo con lo que habrías concluido leyendo solo la publicación.
+
+## Reto evaluable {#reto-u1}
+
+::: {.callout-important appearance="simple" icon="false"}
+## Reto de la unidad 1 · Verificar una afirmación científica
+Elige una afirmación relacionada con la ciencia o la salud que circule en redes sociales o en medios:
+
+1. Aplica el método **SIFT** y documenta cada paso con capturas y enlaces.
+2. Localiza la **fuente primaria** (el estudio, el informe o los datos originales) y compara lo que dice con lo que se afirma.
+3. Evalúa **tres fuentes** que hayas usado con la tabla de criterios del apartado 3.
+4. Concluye si la afirmación es verdadera, falsa, exagerada o no comprobable, y explica por qué.
+
+**Entrega:** un informe hecho con la [plantilla de entrega](plantillas/entrega_reto.qmd). Se evalúa con la rúbrica que incluye la plantilla. Este reto **no tiene solución en el libro**: cada estudiante elige una afirmación distinta y la corrección la hace el profesorado.
+:::
+
+## Autoevaluación
+
+Responde a todas las preguntas y pulsa **Mostrar respuestas**: verás en verde las acertadas, en rojo las falladas y tu recuento. Puedes corregir y volver a comprobar. No cuenta para la nota.
+
+::: {.webex-check .webex-box}
+1. Reenviar un remedio casero ineficaz creyendo que funciona es un caso de {{< mcq "desinformación" "*información errónea" "información maliciosa" >}}
+2. Según Pennycook y Rand, mucha gente comparte noticias falsas sobre todo por falta de {{< fitb "atención" "atencion" ignorecase=true >}}
+3. La lectura lateral consiste en analizar a fondo la propia página antes de salir de ella. {{< torf false >}}
+4. El último paso de SIFT, rastrear hasta el original, busca la fuente {{< mcq "terciaria" "*primaria" "secundaria" >}}
+5. ¿Qué heurístico usamos cuando confiamos en una web porque tiene muchas reseñas positivas? {{< mcq "Reputación" "*Respaldo" "Intención persuasiva" >}}
+6. Un artículo de revisión que resume muchos estudios es una fuente {{< mcq "primaria" "*secundaria" "terciaria" >}}
+7. ¿Qué miden las menciones de un artículo en redes sociales?
+
+{{< longmcq "La calidad científica del artículo" "*La atención que recibe" "Si sus resultados son verdaderos" >}}
+
+8. Difundir datos personales reales de alguien para perjudicarle es {{< mcq "información errónea" "desinformación" "*información maliciosa" >}}
+9. Una ley publicada en el BOE es una fuente {{< mcq "*primaria" "secundaria" "terciaria" >}}
+10. Un preprint ya ha superado la revisión por pares. {{< torf false >}}
+:::
+
+::: {.webex-solution boton="Ver explicaciones"}
+- Es falsa, pero sin intención de engañar.
+- Una pausa para pensar mejora el juicio.
+- Es la lectura vertical; la lateral sale de la página para contrastarla.
+- La fuente original de la afirmación.
+- El respaldo de otros: reseñas, «me gusta», recomendaciones.
+- Resume y analiza fuentes primarias.
+- La altmetría mide atención, no calidad ni veracidad.
+- Es verdadera, pero se usa para causar daño.
+- Es el texto original de la norma.
+- Es una versión previa a la revisión.
+:::
+
+## Recursos complementarios
+
+| Recurso | Para qué sirve |
+|---|---|
+| [Caulfield, M. – SIFT (The four moves)](https://hapgood.us/2019/06/19/sift-the-four-moves/) | El método SIFT explicado por su autor |
+| [ACRL – Framework for Information Literacy](https://www.ala.org/acrl/standards/ilframework) | Marco de la alfabetización informacional |
+| [Maldita.es](https://www.maldita.es/) y [Newtral](https://www.newtral.es/) | Verificadores españoles |
+| [IFCN – Código de principios](https://ifcncodeofprinciples.poynter.org/) | Red internacional de verificadores |
+| [*The information literacy user's guide*](https://milnepublishing.geneseo.edu/the-information-literacy-users-guide-an-open-online-textbook/) | Manual abierto de la bibliografía básica |

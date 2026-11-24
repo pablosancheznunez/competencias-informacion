@@ -1,0 +1,64 @@
+---
+engine: markdown
+---
+
+# Guía para el profesorado {#sec-guia}
+
+Esta guía explica cómo está pensado el libro para la docencia de la asignatura y cómo mantenerlo.
+
+## Correspondencia con la ficha de la asignatura
+
+Los seis capítulos siguen, en el mismo orden, los cuatro bloques y las nueve unidades del programa oficial de **Competencias digitales para el uso de la información** (19408).
+
+| Capítulo | Unidades | Bloque |
+|---|---|---|
+| Fuentes de información | 1 | Introducción. Fuentes de información |
+| Recuperación de información | 2 | Recuperación y uso ético |
+| Uso ético de la información y plagio | 3 | Recuperación y uso ético |
+| Referencias bibliográficas | 4 y 5 | Referencias bibliográficas |
+| IA generativa: fundamentos y aplicaciones | 6 y 7 | Inteligencia artificial generativa |
+| IA generativa: ética, autoría y regulación | 8 y 9 | Inteligencia artificial generativa |
+
+| Actividad de evaluación (ficha) | Peso | Apoyo en el libro |
+|---|---|---|
+| Trabajos prácticos y presentaciones | 70 % | **Retos evaluables** (uno por capítulo) |
+| Prueba final (mínimo 4) | 30 % | Contenidos y lecturas obligatorias; las autoevaluaciones y el banco de preguntas en Moodle XML sirven de práctica |
+| Recuperación (prueba tipo test 50 % y trabajo práctico 50 %) | — | Banco de preguntas y cualquiera de los retos |
+
+## Retos evaluables
+
+Cada capítulo termina con un reto sin pista, solución ni corrección automática. Cada estudiante elige su tema, su afirmación o su caso, lo que dificulta copiar. Los retos 2 y 4 se encadenan: los documentos encontrados en la estrategia de búsqueda se gestionan después en Zotero. Se entregan con la plantilla `entrega_reto.qmd`, que lleva una rúbrica común: búsqueda y selección de fuentes (25 %), evaluación crítica (25 %), uso ético y citación (20 %), argumentación (20 %) y presentación (10 %). La plantilla genera un HTML con las imágenes dentro, de modo que la entrega es un único fichero; también puede entregarse en el formato que indique el profesorado. No hace falta saber R para usarla.
+
+Las soluciones de referencia y los criterios de corrección de los retos no están en el repositorio público.
+
+## Autoevaluación en Aula Global
+
+Las preguntas de autoevaluación de cada capítulo están exportadas a **Moodle XML** en la carpeta `moodle/` del repositorio: un fichero por capítulo y uno con todo el banco. Se importan desde *Banco de preguntas → Importar → Formato Moodle XML*. Cada pregunta conserva su explicación como retroalimentación general, y el banco sirve para preparar la prueba final y la prueba de recuperación.
+
+## El papel de R
+
+El libro usa R lo imprescindible: cuatro capítulos tienen un ejercicio breve de completar huecos que muestra por dentro una herramienta (operadores booleanos, orden de referencias, detección de coincidencias, verificación de DOI). El capítulo [Usar R en este libro](00-r-en-el-libro.qmd) basta como preparación. Ningún reto exige programar.
+
+## Funciones del libro
+
+- **Progreso del estudiante**: cada capítulo muestra los ejercicios resueltos y las preguntas acertadas; la presentación resume todos. Se guarda solo en el navegador del estudiante (`localStorage`): el profesorado no lo ve.
+- **Uso sin conexión**: un *service worker* (`sw.js`) guarda las páginas y el motor de R tras la primera visita.
+- **Modo claro y oscuro**, con auditoría de accesibilidad (WCAG 2.1 AA) en los dos.
+- **PDF y EPUB** generados con `python3 herramientas/pdf.py`.
+
+## Mantenimiento
+
+Desde la raíz del repositorio:
+
+```bash
+python3 herramientas/preparar.py        # sw.js y flujo de integración continua
+python3 herramientas/extraer_r.py       # scripts .R de cada capítulo
+python3 herramientas/moodle.py          # banco de preguntas
+python3 herramientas/figuras.py         # figuras
+python3 herramientas/pdf.py             # PDF y EPUB
+quarto render
+```
+
+El flujo `.github/workflows/comprobar.yml` renderiza el libro y comprueba en un navegador real todos los ejercicios, las preguntas y la accesibilidad en modo claro y oscuro, y una vez por semana revisa los enlaces externos. Al publicar una versión nueva, actualiza `version` en `CITATION.cff` y vuelve a ejecutar `preparar.py` para que los navegadores renueven su copia.
+
+Los datos de los ejercicios son **inventados con fines didácticos**; no hay datos de personas reales.

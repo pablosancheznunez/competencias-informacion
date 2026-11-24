@@ -1,0 +1,31 @@
+{
+  "title": "Competencias digitales para el uso de la información: guía interactiva",
+  "upload_type": "publication",
+  "publication_type": "book",
+  "description": "<p>Libro abierto e interactivo para la asignatura «Competencias digitales para el uso de la información» (19408) del Grado en Gestión de la Información y Contenidos Digitales de la Universidad Carlos III de Madrid. Cubre las unidades del programa oficial (fuentes de información, recuperación, uso ético y plagio, referencias bibliográficas e inteligencia artificial generativa) con lecturas, glosario, autoevaluación, retos evaluables y algunos ejercicios en R que se ejecutan en el navegador (webR).</p>",
+  "creators": [
+    {
+      "name": "Sánchez-Núñez, Pablo",
+      "affiliation": "Universidad Carlos III de Madrid",
+      "orcid": "0000-0001-7845-9506"
+    }
+  ],
+  "license": "cc-by-4.0",
+  "language": "spa",
+  "access_right": "open",
+  "keywords": [
+    "alfabetización informacional",
+    "evaluación de fuentes",
+    "recuperación de información",
+    "plagio",
+    "referencias bibliográficas",
+    "inteligencia artificial generativa"
+  ],
+  "related_identifiers": [
+    {
+      "identifier": "https://pablosancheznunez.com/competencias-informacion/",
+      "relation": "isAlternateIdentifier",
+      "scheme": "url"
+    }
+  ]
+}

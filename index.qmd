@@ -1,0 +1,83 @@
+---
+engine: markdown
+---
+
+# Presentación {#sec-presentacion .unnumbered}
+
+Este libro acompaña a la asignatura **Competencias digitales para el uso de la información** (código 19408, 3 ECTS, primer curso, segundo cuatrimestre) del Grado en Gestión de la Información y Contenidos Digitales de la Universidad Carlos III de Madrid. Su objetivo es que aprendas a **encontrar, evaluar y usar la información de forma fiable y ética**, también cuando la produce una inteligencia artificial.
+
+El libro recorre los cuatro bloques del programa oficial: la evaluación de la credibilidad de la información digital, la búsqueda y organización de la información, su uso ético (incluidas las referencias bibliográficas y el plagio) y la inteligencia artificial generativa para crear contenidos.
+
+**Autor:** Pablo Sánchez-Núñez ([ORCID 0000-0001-7845-9506](https://orcid.org/0000-0001-7845-9506)), Universidad Carlos III de Madrid.
+
+## Objetivos de la asignatura
+
+Al terminar la asignatura deberías ser capaz de:
+
+- Reconocer la sobrecarga informativa y la desinformación, y usar la información digital de forma crítica.
+- Identificar, seleccionar y evaluar fuentes de información, incluidas las redes sociales como fuente de información científica.
+- Diseñar estrategias de búsqueda en plataformas generales y especializadas, y organizar lo que encuentras.
+- Usar la información de forma ética, respetando la propiedad intelectual y evitando el plagio.
+- Crear y gestionar referencias bibliográficas con un estilo de citación.
+- Entender cómo funciona la inteligencia artificial generativa, para qué sirve, cuáles son sus límites y qué dicen la ética y la regulación sobre su uso.
+
+## Cómo está organizado cada capítulo
+
+Cada capítulo empieza con **objetivos** y **glosario**, propone una **lectura obligatoria** y otras complementarias, desarrolla los **contenidos** del programa, plantea una **práctica**, un **reto evaluable** y termina con una **autoevaluación** de corrección inmediata y **recursos complementarios**.
+
+::: {.callout-note appearance="simple" icon="false"}
+## Un poco de R
+En cuatro capítulos hay ejercicios muy breves de R, que se ejecutan en el navegador sin instalar nada, para ver por dentro cómo funcionan algunas herramientas: los operadores booleanos de un buscador, el formato de una referencia, la detección de coincidencias en un texto o la verificación de referencias generadas por una IA. No hace falta saber programar: el capítulo [Usar R en este libro](00-r-en-el-libro.qmd) explica lo imprescindible y todos los ejercicios tienen pista y solución.
+:::
+
+::: {.callout-tip appearance="simple" icon="false"}
+## Descargar el libro
+[Libro en PDF](pdf/competencias-informacion.pdf){.btn .btn-primary download="competencias-informacion.pdf"}
+[Libro en EPUB](pdf/competencias-informacion.epub){.btn .btn-outline-primary download="competencias-informacion.epub"}
+
+El PDF sirve para leer o imprimir; el EPUB, para lectores de libros electrónicos y móviles.
+:::
+
+## Tu progreso y uso sin conexión
+
+El libro anota los ejercicios que resuelves y las preguntas que aciertas. El progreso se guarda **solo en este navegador**: no se envía a ningún servidor ni lo ve el profesorado.
+
+::: {#progreso-resumen}
+Activa JavaScript para ver tu progreso.
+:::
+
+Después de la primera visita, el navegador guarda el libro y el motor de R, así que podrás consultar los capítulos que hayas abierto **sin conexión**. [Si tu navegador lo permite, se activa al cargar la página.]{#sin-conexion-estado .sin-conexion-estado}
+
+Usa el interruptor que hay junto al título del libro, en la barra lateral, para cambiar entre el modo claro y el oscuro.
+
+## Mapa del libro
+
+| Bloque | Capítulo | Unidades del programa |
+|---|---|---|
+| Credibilidad de la información | [Fuentes de información](01-fuentes.qmd) | 1 |
+| Búsqueda y organización | [Recuperación de información](02-recuperacion.qmd) | 2 |
+| Uso ético | [Uso ético de la información y plagio](03-etica-plagio.qmd), [Referencias bibliográficas](04-referencias.qmd) | 3, 4 y 5 |
+| IA generativa | [Fundamentos y aplicaciones](05-ia-fundamentos.qmd), [Ética, autoría y regulación](06-ia-etica.qmd) | 6 a 9 |
+
+## Relación con la evaluación
+
+La asignatura es presencial y de **evaluación continua (100 %)**: trabajos prácticos y presentaciones (**70 %**) y una **prueba final** el último día de clase (**30 %**), en la que hay que obtener al menos un 4. La asistencia y la participación pueden contar. El plagio o la copia en cualquier actividad supone perder la nota de esa actividad.
+
+- Los **retos evaluables** de cada capítulo están pensados como trabajos prácticos.
+- Las **autoevaluaciones** no cuentan para la nota y preparan la prueba final; también están en Aula Global.
+
+Esta descripción resume la ficha oficial; en caso de diferencia, prevalece lo que publique la asignatura en Aula Global.
+
+## Bibliografía básica de la asignatura
+
+- Bobish, G.; Jacobson, T. (eds.) (2014). [*The information literacy user's guide: An open, online textbook*](https://milnepublishing.geneseo.edu/the-information-literacy-users-guide-an-open-online-textbook/). Open SUNY Textbooks.
+- Cordón García, J. A. et al. (2016). *Las nuevas fuentes de información: la búsqueda informativa, documental y de investigación en el ámbito digital*. Pirámide.
+- Cruz Gil, C. (2015). *Modelos de búsqueda y recuperación de la información*. Trea.
+- Dorner, D. G.; Gorman, G. E.; Calvert, P. J. (2015). *Information needs analysis: Principles and practice in information organizations*. Facet.
+- Pacios Lozano, A. R. (coord.) (2013). *Técnicas de búsqueda y uso de la información*. Ramón Areces.
+
+## Autoría y cómo citar
+
+Libro escrito por Pablo Sánchez-Núñez (Universidad Carlos III de Madrid). Los textos y las figuras se publican con licencia [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/deed.es) y el código con licencia MIT. El código fuente está en [GitHub](https://github.com/pablosancheznunez/competencias-informacion).
+
+> Sánchez-Núñez, P. (2026). *Competencias digitales para el uso de la información: guía interactiva*. Zenodo.

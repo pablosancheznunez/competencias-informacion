@@ -1,0 +1,121 @@
+---
+engine: markdown
+---
+
+# Usar R en este libro {#sec-r .unnumbered}
+
+Algunos capítulos tienen ejercicios cortos de R que se ejecutan **en tu navegador**. No vas a aprender a programar: vas a usar R como una calculadora potente para ver por dentro cómo funcionan algunas herramientas de información. Este capítulo te explica lo justo en diez minutos.
+
+::: {.callout-note appearance="default"}
+## Objetivos
+- Ejecutar y modificar código de R en el navegador.
+- Guardar valores y textos en objetos y trabajar con vectores.
+:::
+
+## Cómo funcionan las celdas
+
+Cada bloque de código tiene un botón **Run Code**. Puedes cambiar el código y volver a ejecutarlo; **Start Over** recupera la versión original. La primera vez que abres una página, el navegador descarga el motor de R (unos segundos).
+
+```{webr}
+#| autorun: true
+resultados <- 1250          # documentos que devuelve una búsqueda
+pertinentes <- 37           # los que de verdad te sirven
+pertinentes / resultados    # proporción
+```
+
+Con `<-` se guarda un valor en un objeto. Un **vector** reúne varios valores con `c()`. Los textos van entre comillas:
+
+```{webr}
+fuentes <- c("Dialnet", "Google Académico", "Scopus", "Wikipedia")
+length(fuentes)                  # cuántos hay
+"Scopus" %in% fuentes            # ¿está Scopus?
+toupper(fuentes)                 # en mayúsculas
+```
+
+### Ejercicio 1 {.unnumbered}
+
+Una búsqueda devuelve 480 resultados y, tras revisarlos, 24 son pertinentes. Calcula la proporción de resultados pertinentes (la **precisión** de la búsqueda).
+
+```{webr}
+#| exercise: r_precision
+pertinentes <- 24
+resultados <- ______
+pertinentes / resultados
+```
+
+::: {.hint exercise="r_precision"}
+Sustituye el hueco por el número total de resultados.
+:::
+
+::: {.solution exercise="r_precision"}
+```r
+pertinentes <- 24
+resultados <- 480
+pertinentes / resultados
+```
+0,05: solo uno de cada veinte resultados sirve. En el capítulo de recuperación verás cómo mejorar la precisión.
+:::
+
+```{webr}
+#| exercise: r_precision
+#| check: true
+if (isTRUE(all.equal(as.numeric(.result), 0.05))) {
+  list(correct = TRUE, message = "Correcto: 24 / 480 = 0,05.")
+} else {
+  list(correct = FALSE, message = "Divide 24 entre el total de resultados (480).")
+}
+```
+
+### Ejercicio 2 {.unnumbered}
+
+Comprueba si «Dialnet» está en el vector `fuentes`.
+
+```{webr}
+#| exercise: r_in
+#| setup: true
+fuentes <- c("Dialnet", "Google Académico", "Scopus", "Wikipedia")
+```
+
+```{webr}
+#| exercise: r_in
+"______" %in% fuentes
+```
+
+::: {.hint exercise="r_in"}
+Escribe el nombre exactamente igual, con mayúscula inicial.
+:::
+
+::: {.solution exercise="r_in"}
+```r
+"Dialnet" %in% fuentes
+```
+`TRUE`. Si escribes «dialnet» en minúsculas, R dice `FALSE`: distingue mayúsculas y minúsculas, como algunos buscadores.
+:::
+
+```{webr}
+#| exercise: r_in
+#| check: true
+if (identical(.result, TRUE)) {
+  list(correct = TRUE, message = "Correcto: Dialnet está en el vector.")
+} else {
+  list(correct = FALSE, message = "Escribe \"Dialnet\" con D mayúscula.")
+}
+```
+
+## Autoevaluación
+
+Responde a todas las preguntas y pulsa **Mostrar respuestas**: verás en verde las acertadas, en rojo las falladas y tu recuento. Puedes corregir y volver a comprobar. No cuenta para la nota.
+
+::: {.webex-check .webex-box}
+1. En R, los textos se escriben entre comillas. {{< torf true >}}
+2. Para crear un vector con varios valores se usa la función {{< mcq "length()" "*c()" "toupper()" >}}
+3. `length(c("a", "b", "c"))` devuelve {{< fitb "3" >}}
+4. Para hacer los ejercicios del libro hay que instalar R en el ordenador. {{< torf false >}}
+:::
+
+::: {.webex-solution boton="Ver explicaciones"}
+- Sin comillas, R buscaría un objeto con ese nombre.
+- `c()` combina valores en un vector.
+- Tres elementos.
+- Se ejecutan en el navegador con webR.
+:::

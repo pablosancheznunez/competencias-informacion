@@ -1,0 +1,140 @@
+---
+engine: markdown
+---
+
+# Unidades 8 y 9. Inteligencia artificial generativa: ética, autoría y regulación {#sec-u6}
+
+::: {.callout-note appearance="default"}
+## Objetivos
+- Analizar los principios éticos de la IA generativa: consentimiento, privacidad y autodeterminación informativa.
+- Comprender la responsabilidad y la autoría en el uso de la IA.
+- Declarar de forma transparente el uso de IA en los trabajos académicos.
+- Conocer el marco normativo europeo y los principios éticos de la IA.
+:::
+
+::: {.callout-note appearance="simple" icon="false"}
+## Glosario de la unidad
+[Sesgo algorítmico](92-glosario.qmd#gl-sesgo) · [Declaración de uso de IA](92-glosario.qmd#gl-declaracion) · [Reglamento de IA](92-glosario.qmd#gl-aiact) · [Alfabetización en IA](92-glosario.qmd#gl-alfia) · [Explicabilidad](92-glosario.qmd#gl-explicabilidad) · [Datos personales](92-glosario.qmd#gl-personales) · [Autodeterminación informativa](92-glosario.qmd#gl-autodeterminacion)
+:::
+
+::: {.callout-tip appearance="simple" icon="false"}
+## Descargas
+[Plantilla de entrega del reto (.qmd)](plantillas/entrega_reto.qmd){.btn .btn-outline-primary .btn-sm download="entrega_reto.qmd"}
+[Tema de estilo (.scss)](plantillas/informe.scss){.btn .btn-outline-primary .btn-sm download="informe.scss"}
+:::
+
+## Lectura obligatoria
+
+::: {.lectura}
+Floridi, L.; Cowls, J. (2019). [A unified framework of five principles for AI in society](https://doi.org/10.1162/99608f92.8cd550d1). *Harvard Data Science Review*, 1(1).
+:::
+
+### Lecturas complementarias {.unnumbered}
+
+- [Reglamento (UE) 2024/1689, de Inteligencia Artificial](https://eur-lex.europa.eu/eli/reg/2024/1689/oj?locale=es). *Diario Oficial de la Unión Europea*.
+- Bender, E. M. et al. (2021). [On the dangers of stochastic parrots](https://doi.org/10.1145/3442188.3445922). Costes ambientales y sesgos de los grandes modelos.
+
+## 1. Principios éticos de la IA
+
+Floridi y Cowls (2019) compararon las principales declaraciones internacionales sobre ética de la IA y las resumieron en **cinco principios**:
+
+| Principio | Qué significa |
+|---|---|
+| **Beneficencia** | Promover el bienestar de las personas y del planeta |
+| **No maleficencia** | Evitar daños: privacidad, seguridad, mal uso |
+| **Autonomía** | Que las personas conserven la capacidad de decidir |
+| **Justicia** | Repartir beneficios, evitar la discriminación |
+| **Explicabilidad** | Que se pueda entender cómo funciona y quién responde |
+
+Los cuatro primeros vienen de la bioética; el quinto es específico de la IA y hace posibles los demás.
+
+## 2. Riesgos éticos en el uso cotidiano
+
+- **Sesgos**: los modelos reproducen los sesgos de sus datos de entrenamiento (de género, de origen, de idioma). Una respuesta puede ser neutral en apariencia y sesgada en el fondo.
+- **Consentimiento, privacidad y autodeterminación informativa**: la **autodeterminación informativa** es el derecho de cada persona a decidir qué se hace con sus datos personales; en España, el Tribunal Constitucional lo reconoce como derecho fundamental a la protección de datos. Los modelos se entrenan a menudo con datos recogidos de internet sin el consentimiento de sus autores, y lo que escribes en un asistente puede almacenarse y, según el servicio, usarse para entrenar modelos. No introduzcas datos personales propios ni ajenos, ni documentos confidenciales, y revisa la configuración de privacidad del servicio.
+- **Autoría y propiedad intelectual**: un texto generado no es tuyo; además, los modelos se entrenan con obras protegidas, un debate jurídico abierto.
+- **Dependencia y aprendizaje**: delegar en la IA lo que la asignatura quiere que aprendas te impide aprenderlo.
+- **Coste ambiental**: entrenar y usar grandes modelos consume mucha energía y agua (Bender et al., 2021).
+
+## 3. Responsabilidad, autoría y transparencia
+
+En el trabajo académico, la regla general es la **transparencia**: si usas IA, dilo, explica para qué y asume la responsabilidad del resultado. Las editoriales científicas y el comité COPE coinciden en que una IA **no puede ser autora**, porque no puede responsabilizarse del trabajo.
+
+Una declaración útil indica **qué herramienta** (y versión), **para qué** se usó, **en qué partes** y **cómo** se revisó el resultado. Por ejemplo:
+
+> Declaración de uso de IA: he usado [herramienta, versión] para revisar la ortografía y la claridad de los apartados 2 y 3, y para proponer sinónimos en la tabla de términos de búsqueda. He revisado y aceptado o rechazado cada propuesta. Las búsquedas, la selección de documentos y las conclusiones son mías. No he introducido datos personales.
+
+Si la IA influye en el contenido, APA recomienda además citarla en el texto y en las referencias, indicando la instrucción usada en el apéndice o en el texto.
+
+![Del uso a la declaración: qué herramienta, para qué, en qué partes y cómo se revisó.](figuras/u6_declaracion.svg){#fig-declaracion fig-alt="Cuatro tarjetas en fila con las preguntas de una declaración de uso de IA: qué herramienta y versión, para qué se usó, en qué partes del trabajo y cómo se revisó el resultado. Debajo, una nota: la responsabilidad del trabajo es siempre de quien lo firma."}
+
+## 4. El marco normativo europeo
+
+El **Reglamento (UE) 2024/1689** de Inteligencia Artificial (*AI Act*) es la primera ley integral sobre IA. Sigue un **enfoque basado en el riesgo**:
+
+| Nivel de riesgo | Ejemplos | Consecuencia |
+|---|---|---|
+| **Inaceptable** | Puntuación social, manipulación que cause daño | Prohibido |
+| **Alto** | IA en educación para evaluar o admitir estudiantes, en empleo, en servicios esenciales | Requisitos estrictos: gestión de riesgos, datos de calidad, supervisión humana |
+| **Transparencia** | Asistentes conversacionales, contenido generado (*deepfakes*) | Informar de que se interactúa con una IA o de que el contenido es artificial |
+| **Mínimo** | Filtros de correo no deseado, videojuegos | Sin obligaciones específicas |
+
+Además, el reglamento regula los **modelos de IA de uso general** (los que están detrás de los asistentes) y obliga a quienes despliegan sistemas de IA a procurar que su personal tenga un nivel suficiente de **alfabetización en IA**. Sus obligaciones se aplican de forma escalonada desde 2025. Otras normas, como el Reglamento General de Protección de Datos, siguen aplicándose a la IA.
+
+## Práctica
+
+Busca la política de uso de IA de la UC3M o de la asignatura y la política sobre IA de una revista de tu área. Compáralas: ¿qué permiten, qué prohíben y qué piden declarar?
+
+## Reto evaluable {#reto-u6}
+
+::: {.callout-important appearance="simple" icon="false"}
+## Reto de las unidades 8 y 9 · Caso ético y declaración de uso
+1. Elige un **caso real** de uso de IA generativa con problemas éticos (en educación, periodismo, ciencia o cultura), documentado en al menos dos fuentes fiables.
+2. Analízalo con los **cinco principios** de Floridi y Cowls.
+3. Sitúalo en los **niveles de riesgo** del Reglamento europeo de IA y explica qué obligaciones se aplicarían.
+4. Redacta la **declaración de uso de IA** de tu propio informe (aunque no hayas usado ninguna, explícitalo).
+
+**Entrega:** un informe hecho con la [plantilla de entrega](plantillas/entrega_reto.qmd). Se evalúa con la rúbrica que incluye la plantilla. Este reto **no tiene solución en el libro**: cada estudiante analiza un caso distinto y la corrección la hace el profesorado.
+:::
+
+## Autoevaluación
+
+Responde a todas las preguntas y pulsa **Mostrar respuestas**: verás en verde las acertadas, en rojo las falladas y tu recuento. Puedes corregir y volver a comprobar. No cuenta para la nota.
+
+::: {.webex-check .webex-box}
+1. El principio que Floridi y Cowls añaden a los cuatro de la bioética es la {{< fitb "explicabilidad" ignorecase=true >}}
+2. Una IA puede figurar como coautora de un artículo científico si ha escrito buena parte del texto. {{< torf false >}}
+3. Según el Reglamento europeo de IA, un sistema de IA usado para evaluar a estudiantes es de riesgo {{< mcq "mínimo" "de transparencia" "*alto" "inaceptable" >}}
+4. La puntuación social de las personas está {{< mcq "permitida con supervisión" "*prohibida" "sujeta solo a transparencia" >}}
+5. Es buena práctica introducir datos personales de compañeros en un asistente de IA para que redacte un trabajo de grupo. {{< torf false >}}
+6. El Reglamento europeo de IA sigue un enfoque basado en el {{< mcq "tamaño del modelo" "*riesgo" "sector económico" >}}
+7. ¿Qué debe incluir una declaración de uso de IA?
+
+{{< longmcq "Solo el nombre de la herramienta" "*Qué herramienta, para qué, en qué partes y cómo se revisó el resultado" "La conversación completa con la IA en todos los casos" >}}
+
+8. El derecho de cada persona a decidir sobre el uso de sus datos personales se llama autodeterminación {{< fitb "informativa" ignorecase=true >}}
+9. Informar de que un contenido ha sido generado por IA es una obligación del nivel de riesgo {{< mcq "mínimo" "*de transparencia" "inaceptable" >}}
+10. Si declaras el uso de IA, dejas de ser responsable de los errores que contenga el trabajo. {{< torf false >}}
+:::
+
+::: {.webex-solution boton="Ver explicaciones"}
+- Hace posibles los otros cuatro principios.
+- La autoría exige responsabilidad, y una IA no puede asumirla.
+- La educación y la evaluación de estudiantes son ámbitos de alto riesgo.
+- Es una práctica prohibida.
+- Pone en riesgo la privacidad de otras personas.
+- Las obligaciones crecen con el riesgo.
+- Así quien lee sabe qué es tuyo y qué no.
+- Base del derecho a la protección de datos.
+- Afecta a asistentes y contenidos sintéticos.
+- La responsabilidad sigue siendo de quien firma.
+:::
+
+## Recursos complementarios
+
+| Recurso | Para qué sirve |
+|---|---|
+| [Reglamento (UE) 2024/1689](https://eur-lex.europa.eu/eli/reg/2024/1689/oj?locale=es) | Texto oficial del Reglamento de IA |
+| [COPE – Authorship and AI tools](https://publicationethics.org/cope-position-statements/ai-author) | Posición sobre IA y autoría |
+| [APA Style – How to cite ChatGPT](https://apastyle.apa.org/blog/how-to-cite-chatgpt) | Citar contenido generado por IA |
+| [UNESCO – Recomendación sobre la ética de la IA](https://www.unesco.org/es/artificial-intelligence/recommendation-ethics) | Marco ético internacional |

@@ -1,0 +1,155 @@
+---
+engine: markdown
+---
+
+# Glosario {#sec-glosario}
+
+Términos del libro ordenados por capítulo. Cada entrada enlaza con el capítulo donde se explica.
+
+## Fuentes de información
+
+### Sobrecarga informativa {#gl-sobrecarga}
+Situación en la que se recibe más información de la que se puede procesar, con efectos como la ansiedad o la sensación de estar peor informado. → [Unidad 1](01-fuentes.qmd)
+
+### Desinformación {#gl-desinformacion}
+*Disinformation*. Información falsa creada o difundida con intención de engañar. → [Unidad 1](01-fuentes.qmd)
+
+### Información errónea {#gl-erronea}
+*Misinformation*. Información falsa que se comparte sin intención de engañar. → [Unidad 1](01-fuentes.qmd)
+
+### Credibilidad {#gl-credibilidad}
+Grado en que una fuente o un mensaje se percibe como digno de confianza. En línea se juzga a menudo con atajos mentales (heurísticos) como la reputación o el respaldo de otros. → [Unidad 1](01-fuentes.qmd)
+
+### Lectura lateral {#gl-lateral}
+Estrategia de verificación que consiste en salir de la página y consultar otras fuentes sobre ella y sobre lo que afirma, en lugar de analizarla solo por dentro. → [Unidad 1](01-fuentes.qmd)
+
+### Método SIFT {#gl-sift}
+Método de Mike Caulfield para verificar información en cuatro pasos: parar, investigar la fuente, buscar mejor cobertura y rastrear hasta el original. → [Unidad 1](01-fuentes.qmd)
+
+### Fuente primaria {#gl-primaria}
+Fuente que contiene información original: un artículo de investigación, unos datos, una ley o una entrevista. Las secundarias la analizan o resumen; las terciarias ayudan a encontrarla. → [Unidad 1](01-fuentes.qmd)
+
+### Revisión por pares {#gl-pares}
+Evaluación de un trabajo por especialistas del área antes de su publicación. → [Unidad 1](01-fuentes.qmd)
+
+### Altmetría {#gl-altmetria}
+Medición de las menciones de las publicaciones científicas en redes sociales, noticias y otras fuentes en línea. Mide atención, no calidad. → [Unidad 1](01-fuentes.qmd)
+
+## Recuperación de información
+
+### Necesidad de información {#gl-necesidad}
+Lo que una persona quiere saber y para qué; es el punto de partida de toda búsqueda. → [Unidad 2](02-recuperacion.qmd)
+
+### Operador booleano {#gl-booleano}
+Palabra que combina términos de búsqueda como conjuntos: Y (AND) exige todos, O (OR) admite cualquiera y NO (NOT) excluye. → [Unidad 2](02-recuperacion.qmd)
+
+### Truncamiento {#gl-truncamiento}
+Uso de un símbolo, normalmente el asterisco, para recuperar todas las terminaciones de una raíz. → [Unidad 2](02-recuperacion.qmd)
+
+### Búsqueda por campos {#gl-campos}
+Búsqueda limitada a una parte del registro, como el título, el autor o el resumen. → [Unidad 2](02-recuperacion.qmd)
+
+### Precisión {#gl-precision}
+Proporción de los resultados recuperados que son pertinentes. → [Unidad 2](02-recuperacion.qmd)
+
+### Exhaustividad {#gl-exhaustividad}
+*Recall*. Proporción de todos los documentos pertinentes que la búsqueda recupera. → [Unidad 2](02-recuperacion.qmd)
+
+### Recolección de bayas {#gl-bayas}
+*Berrypicking*. Modelo de Marcia Bates según el cual la búsqueda es un proceso que cambia a medida que se lee, recogiendo información útil en cada paso. → [Unidad 2](02-recuperacion.qmd)
+
+### Vocabulario controlado {#gl-controlado}
+Conjunto de términos normalizados (tesauro, encabezamientos de materia) que una base de datos usa para describir los documentos y agrupar los sinónimos. → [Unidad 2](02-recuperacion.qmd)
+
+## Uso ético de la información y plagio
+
+### Propiedad intelectual {#gl-propiedad}
+Conjunto de derechos de los autores sobre sus creaciones originales: derechos morales (irrenunciables) y de explotación. → [Unidad 3](03-etica-plagio.qmd)
+
+### Derecho de cita {#gl-cita}
+Límite de la propiedad intelectual que permite incluir fragmentos de obras ajenas para su análisis o comentario con fines docentes o de investigación, indicando la fuente y el autor. → [Unidad 3](03-etica-plagio.qmd)
+
+### Dominio público {#gl-dominio}
+Situación de una obra cuyos derechos de explotación han expirado y puede usarse libremente, respetando los derechos morales. → [Unidad 3](03-etica-plagio.qmd)
+
+### Licencia Creative Commons {#gl-cc}
+Licencia con la que el autor autoriza de antemano ciertos usos de su obra, combinando las condiciones BY, SA, NC y ND. → [Unidad 3](03-etica-plagio.qmd)
+
+### Plagio {#gl-plagio}
+Presentar como propio el trabajo, las ideas o las palabras de otra persona sin reconocerlo. → [Unidad 3](03-etica-plagio.qmd)
+
+### Paráfrasis {#gl-parafrasis}
+Expresión de las ideas de un autor con palabras y estructura propias, acompañada de su cita. → [Unidad 3](03-etica-plagio.qmd)
+
+### Escritura en mosaico {#gl-mosaico}
+*Patchwriting*. Copiar un texto cambiando algunas palabras o su orden, pero manteniendo su estructura. Es una forma de plagio. → [Unidad 3](03-etica-plagio.qmd)
+
+### Integridad académica {#gl-integridad}
+Compromiso con la honestidad, la confianza, la justicia, el respeto y la responsabilidad en el estudio y la investigación. → [Unidad 3](03-etica-plagio.qmd)
+
+## Referencias bibliográficas
+
+### Cita {#gl-cita-texto}
+Marca breve en el texto que remite a la fuente usada, como (Bates, 1989) o [3]. → [Unidades 4 y 5](04-referencias.qmd)
+
+### Referencia bibliográfica {#gl-referencia}
+Descripción completa de una fuente en la lista final de un trabajo. → [Unidades 4 y 5](04-referencias.qmd)
+
+### Estilo de citación {#gl-estilo}
+Conjunto de normas que fija qué datos incluyen las citas y las referencias, en qué orden y con qué puntuación (APA, Vancouver, ISO 690…). → [Unidades 4 y 5](04-referencias.qmd)
+
+### Sistema autor-fecha {#gl-autor-fecha}
+Sistema de citación que identifica la fuente en el texto por el apellido y el año, y ordena la lista alfabéticamente. → [Unidades 4 y 5](04-referencias.qmd)
+
+### Sistema numérico {#gl-numerico}
+Sistema de citación que identifica la fuente con un número y ordena la lista por orden de aparición. → [Unidades 4 y 5](04-referencias.qmd)
+
+### DOI {#gl-doi}
+*Digital Object Identifier*. Identificador permanente de un documento digital que se resuelve en `https://doi.org/`. → [Unidades 4 y 5](04-referencias.qmd)
+
+### Gestor de referencias {#gl-gestor}
+Programa que guarda y organiza referencias, inserta citas en el procesador de textos y genera la bibliografía en un estilo. → [Unidades 4 y 5](04-referencias.qmd)
+
+### Herramienta de originalidad {#gl-originalidad}
+Programa que compara un texto con grandes colecciones de documentos y señala las coincidencias. Su informe es un indicio, no un veredicto de plagio. → [Unidades 4 y 5](04-referencias.qmd)
+
+## Inteligencia artificial generativa
+
+### Inteligencia artificial generativa {#gl-iag}
+IA que produce contenido nuevo (texto, imágenes, audio, código) a partir de patrones aprendidos de grandes cantidades de datos. → [Unidades 6 y 7](05-ia-fundamentos.qmd)
+
+### Modelo de lenguaje {#gl-llm}
+Sistema entrenado con grandes colecciones de textos para predecir el fragmento más probable que sigue a un texto dado. → [Unidades 6 y 7](05-ia-fundamentos.qmd)
+
+### Instrucción {#gl-prompt}
+*Prompt*. Texto con el que se pide algo a un sistema de IA generativa. → [Unidades 6 y 7](05-ia-fundamentos.qmd)
+
+### Alucinación {#gl-alucinacion}
+Respuesta de una IA que parece correcta pero es falsa o inventada, como una referencia bibliográfica inexistente. → [Unidades 6 y 7](05-ia-fundamentos.qmd)
+
+### Datos de entrenamiento {#gl-entrenamiento}
+Colección de datos con la que se entrena un modelo; determina lo que sabe y los sesgos que reproduce. → [Unidades 6 y 7](05-ia-fundamentos.qmd)
+
+### Generación aumentada por recuperación {#gl-rag}
+*RAG*. Técnica que combina un modelo de lenguaje con un buscador o una colección de documentos para responder a partir de lo recuperado. → [Unidades 6 y 7](05-ia-fundamentos.qmd)
+
+### Sesgo algorítmico {#gl-sesgo}
+Error sistemático de un sistema automático que favorece o perjudica a ciertos grupos, a menudo heredado de los datos. → [Unidades 8 y 9](06-ia-etica.qmd)
+
+### Declaración de uso de IA {#gl-declaracion}
+Texto que indica qué herramienta de IA se ha usado en un trabajo, para qué, en qué partes y cómo se ha revisado el resultado. → [Unidades 8 y 9](06-ia-etica.qmd)
+
+### Reglamento de IA {#gl-aiact}
+*AI Act*. Reglamento (UE) 2024/1689, que regula la IA en la Unión Europea con un enfoque basado en el riesgo. → [Unidades 8 y 9](06-ia-etica.qmd)
+
+### Alfabetización en IA {#gl-alfia}
+Conocimientos y capacidades para usar la IA de forma informada y comprender sus oportunidades, riesgos y posibles daños. → [Unidades 8 y 9](06-ia-etica.qmd)
+
+### Explicabilidad {#gl-explicabilidad}
+Principio ético según el cual debe poder entenderse cómo funciona un sistema de IA y quién responde de él. → [Unidades 8 y 9](06-ia-etica.qmd)
+
+### Datos personales {#gl-personales}
+Cualquier información sobre una persona física identificada o identificable. → [Unidades 8 y 9](06-ia-etica.qmd)
+
+### Autodeterminación informativa {#gl-autodeterminacion}
+Derecho de cada persona a decidir sobre el uso de sus datos personales. → [Unidades 8 y 9](06-ia-etica.qmd)

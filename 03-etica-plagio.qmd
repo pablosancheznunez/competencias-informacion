@@ -1,0 +1,194 @@
+---
+engine: markdown
+---
+
+# Unidad 3. Uso ético de la información y plagio {#sec-u3}
+
+::: {.callout-note appearance="default"}
+## Objetivos
+- Conocer los fundamentos de la propiedad intelectual y del derecho de cita.
+- Reconocer los distintos tipos de plagio.
+- Elaborar trabajos académicos sin plagio: citar, parafrasear y resumir correctamente.
+:::
+
+::: {.callout-note appearance="simple" icon="false"}
+## Glosario de la unidad
+[Propiedad intelectual](92-glosario.qmd#gl-propiedad) · [Derecho de cita](92-glosario.qmd#gl-cita) · [Dominio público](92-glosario.qmd#gl-dominio) · [Licencia Creative Commons](92-glosario.qmd#gl-cc) · [Plagio](92-glosario.qmd#gl-plagio) · [Paráfrasis](92-glosario.qmd#gl-parafrasis) · [Escritura en mosaico](92-glosario.qmd#gl-mosaico) · [Integridad académica](92-glosario.qmd#gl-integridad)
+:::
+
+::: {.callout-tip appearance="simple" icon="false"}
+## Descargas
+[Script R del capítulo](plantillas/03_etica_plagio.R){.btn .btn-outline-primary .btn-sm download="03_etica_plagio.R"}
+[Plantilla de entrega del reto (.qmd)](plantillas/entrega_reto.qmd){.btn .btn-outline-primary .btn-sm download="entrega_reto.qmd"}
+[Tema de estilo (.scss)](plantillas/informe.scss){.btn .btn-outline-primary .btn-sm download="informe.scss"}
+:::
+
+## Lectura obligatoria
+
+::: {.lectura}
+Pecorari, D.; Petrić, B. (2014). [Plagiarism in second-language writing](https://doi.org/10.1017/S0261444814000056). *Language Teaching*, 47(3), 269-302.
+:::
+
+### Lecturas complementarias {.unnumbered}
+
+- [Real Decreto Legislativo 1/1996, Ley de Propiedad Intelectual](https://www.boe.es/buscar/act.php?id=BOE-A-1996-8930). Texto consolidado; el art. 32 regula las citas.
+- Creative Commons. [Licencias](https://creativecommons.org/licenses/?lang=es). Qué permite cada licencia.
+
+## 1. Ética de la información
+
+Usar información de forma ética significa reconocer el trabajo de los demás, respetar sus derechos y no engañar a quien lee el propio trabajo. En la universidad, ese compromiso se llama **integridad académica**: honestidad, confianza, justicia, respeto y responsabilidad en el estudio y la investigación.
+
+## 2. Propiedad intelectual
+
+En España, la **Ley de Propiedad Intelectual** (Real Decreto Legislativo 1/1996) protege las creaciones originales (textos, imágenes, música, programas…) desde el momento de su creación, sin necesidad de registro. Distingue:
+
+- **Derechos morales**: reconocimiento de la autoría e integridad de la obra. Son irrenunciables.
+- **Derechos de explotación** (patrimoniales): reproducción, distribución, comunicación pública y transformación. Duran, con carácter general, toda la vida del autor y **70 años** después de su muerte; después la obra pasa al **dominio público**.
+
+El **derecho de cita** (art. 32) permite incluir fragmentos de obras ajenas sin pedir permiso cuando se hace a título de cita o para su análisis, comentario o juicio crítico, con fines docentes o de investigación, en la medida justificada por ese fin, e **indicando la fuente y el nombre del autor**.
+
+Las **licencias Creative Commons** permiten a los autores autorizar de antemano ciertos usos. Se combinan cuatro condiciones: **BY** (reconocimiento, presente en todas), **SA** (compartir igual), **NC** (no comercial) y **ND** (sin obras derivadas). Este libro, por ejemplo, tiene licencia CC BY 4.0.
+
+## 3. Qué es el plagio
+
+**Plagiar** es presentar como propio el trabajo, las ideas o las palabras de otra persona sin reconocerlo. Pecorari y Petrić (2014) distinguen el plagio **intencionado** del que nace de no saber escribir con fuentes, sobre todo al aprender a escribir en otro idioma o en un nuevo género académico. Los dos son plagio, pero el segundo se previene aprendiendo.
+
+| Tipo | Qué es |
+|---|---|
+| **Copia literal** | Copiar texto sin comillas ni cita |
+| **Escritura en mosaico** (*patchwriting*) | Copiar cambiando algunas palabras o el orden, manteniendo la estructura del original |
+| **Paráfrasis sin cita** | Reformular bien las ideas ajenas, pero sin citar la fuente |
+| **Plagio de ideas** | Usar el argumento, los datos o la estructura de otro sin reconocerlo |
+| **Autoplagio** | Reutilizar un trabajo propio ya evaluado o publicado sin indicarlo |
+| **Trabajo hecho por otros** | Entregar un trabajo encargado a otra persona o generado por una IA como si fuera propio |
+
+En esta asignatura, el plagio o la copia en cualquier actividad supone **perder la nota de esa actividad**.
+
+## 4. Cómo escribir con fuentes sin plagiar
+
+- **Cita textual**: las palabras exactas, entre comillas, con la referencia (y la página, si la hay). Para frases que importan por su forma exacta.
+- **Paráfrasis**: la idea del autor con **tus palabras y tu estructura**, con la referencia. Truco: lee, cierra el texto, escribe lo que has entendido y después comprueba que no se parece demasiado al original.
+- **Resumen**: las ideas principales de un texto largo, más breves, con la referencia.
+- **Ideas propias**: no necesitan cita, pero deben distinguirse con claridad de las ajenas.
+- **Conocimiento común** (hechos ampliamente conocidos y fáciles de comprobar): no necesita cita. En caso de duda, cita.
+
+## Práctica en R: así detecta coincidencias un programa
+
+Los programas de detección de coincidencias comparan fragmentos de palabras consecutivas. Una forma sencilla es dividir los textos en grupos de tres palabras (**trigramas**) y calcular qué proporción comparten (**similitud de Jaccard**: comunes / total distintos):
+
+```{webr}
+#| autorun: true
+trigramas <- function(texto) {
+  p <- strsplit(tolower(gsub("[[:punct:]]", "", texto)), "\\s+")[[1]]
+  unique(paste(p[-c(length(p) - 1, length(p))], p[-c(1, length(p))], p[-(1:2)]))
+}
+similitud <- function(a, b) {
+  ta <- trigramas(a); tb <- trigramas(b)
+  length(intersect(ta, tb)) / length(union(ta, tb))
+}
+original <- "La lectura lateral consiste en salir de la página para comprobar qué dicen otras fuentes sobre ella"
+mosaico  <- "La lectura lateral consiste en salir de la web para comprobar lo que dicen otras fuentes sobre ella"
+parafrasis <- "Para verificar una web, conviene consultar qué opinan de ella fuentes distintas en lugar de analizarla por dentro"
+c(mosaico = similitud(original, mosaico), parafrasis = similitud(original, parafrasis))
+```
+
+### Ejercicio 3.1 {.unnumbered}
+
+Calcula la similitud entre el original y una **copia literal** (el mismo texto). ¿Qué valor esperas?
+
+```{webr}
+#| exercise: u3_copia
+#| setup: true
+trigramas <- function(texto) {
+  p <- strsplit(tolower(gsub("[[:punct:]]", "", texto)), "\\s+")[[1]]
+  unique(paste(p[-c(length(p) - 1, length(p))], p[-c(1, length(p))], p[-(1:2)]))
+}
+similitud <- function(a, b) {
+  ta <- trigramas(a); tb <- trigramas(b)
+  length(intersect(ta, tb)) / length(union(ta, tb))
+}
+original <- "La lectura lateral consiste en salir de la página para comprobar qué dicen otras fuentes sobre ella"
+```
+
+```{webr}
+#| exercise: u3_copia
+copia <- original
+similitud(original, ______)
+```
+
+::: {.hint exercise="u3_copia"}
+Compara el original con el objeto `copia`.
+:::
+
+::: {.solution exercise="u3_copia"}
+```r
+copia <- original
+similitud(original, copia)
+```
+1: todos los trigramas coinciden. La escritura en mosaico da un valor intermedio y la paráfrasis bien hecha, casi 0. Por eso estos programas detectan bien la copia, peor el mosaico y casi nada la paráfrasis o la traducción: **no sustituyen al juicio** de quien corrige.
+:::
+
+```{webr}
+#| exercise: u3_copia
+#| check: true
+if (isTRUE(all.equal(as.numeric(.result), 1))) {
+  list(correct = TRUE, message = "Correcto: similitud 1, copia literal.")
+} else {
+  list(correct = FALSE, message = "Compara original con copia.")
+}
+```
+
+## Reto evaluable {#reto-u3}
+
+::: {.callout-important appearance="simple" icon="false"}
+## Reto de la unidad 3 · Escribir con fuentes
+Elige un artículo académico o de divulgación de tu interés:
+
+1. Escribe un **resumen** de unas 150 palabras, una **paráfrasis** de un párrafo y una **cita textual** breve, cada uno con su referencia.
+2. Escribe a propósito una versión en **mosaico** del mismo párrafo y explica por qué sería plagio.
+3. Identifica la **licencia** del artículo y explica qué usos permite.
+4. Reflexiona sobre qué situaciones de tu experiencia escolar o universitaria podrían haber sido plagio sin que lo supieras.
+
+**Entrega:** un informe hecho con la [plantilla de entrega](plantillas/entrega_reto.qmd). Se evalúa con la rúbrica que incluye la plantilla. Este reto **no tiene solución en el libro**: cada estudiante trabaja con un texto distinto y la corrección la hace el profesorado.
+:::
+
+## Autoevaluación
+
+Responde a todas las preguntas y pulsa **Mostrar respuestas**: verás en verde las acertadas, en rojo las falladas y tu recuento. Puedes corregir y volver a comprobar. No cuenta para la nota.
+
+::: {.webex-check .webex-box}
+1. Una paráfrasis bien escrita no necesita cita porque usa palabras propias. {{< torf false >}}
+2. Copiar cambiando algunas palabras pero manteniendo la estructura del original se llama escritura en {{< fitb "mosaico" "patchwriting" ignorecase=true >}}
+3. Los derechos morales de autor son irrenunciables. {{< torf true >}}
+4. En una licencia Creative Commons, la condición que impide el uso comercial es {{< mcq "BY" "SA" "*NC" "ND" >}}
+5. Según la Ley de Propiedad Intelectual, con carácter general los derechos de explotación duran la vida del autor y {{< mcq "20 años más" "50 años más" "*70 años más" >}}
+6. Entregar como propio un trabajo generado por una IA es una forma de plagio. {{< torf true >}}
+7. ¿Por qué un programa de detección de coincidencias no basta para decidir si hay plagio?
+
+{{< longmcq "Porque solo funciona con textos en inglés" "*Porque detecta bien la copia, pero peor el mosaico y casi nada la paráfrasis o la traducción, y no sabe si hay cita" "Porque siempre da falsos positivos" >}}
+
+8. Reutilizar un trabajo propio ya evaluado sin indicarlo se llama {{< fitb "autoplagio" ignorecase=true >}}
+9. La condición de Creative Commons presente en todas las licencias es {{< mcq "*BY" "SA" "NC" "ND" >}}
+10. Los hechos de conocimiento común, ampliamente conocidos y fáciles de comprobar, no necesitan cita. {{< torf true >}}
+:::
+
+::: {.webex-solution boton="Ver explicaciones"}
+- La idea sigue siendo ajena: hay que citarla aunque las palabras sean propias.
+- *Patchwriting*: cambiar palabras sin cambiar la estructura.
+- El reconocimiento de la autoría no se puede ceder.
+- NC, no comercial.
+- 70 años tras la muerte del autor, con carácter general.
+- Es presentar como propio un trabajo que no lo es.
+- Mide coincidencias de texto, no si el uso de la fuente es correcto.
+- También es una forma de plagio.
+- Reconocimiento de la autoría.
+- En caso de duda, mejor citar.
+:::
+
+## Recursos complementarios
+
+| Recurso | Para qué sirve |
+|---|---|
+| [Ley de Propiedad Intelectual (BOE)](https://www.boe.es/buscar/act.php?id=BOE-A-1996-8930) | Texto consolidado |
+| [Creative Commons – Licencias](https://creativecommons.org/licenses/?lang=es) | Elegir y entender una licencia |
+| [*The information literacy user's guide*, capítulo sobre ética](https://milnepublishing.geneseo.edu/the-information-literacy-users-guide-an-open-online-textbook/) | Manual abierto |
