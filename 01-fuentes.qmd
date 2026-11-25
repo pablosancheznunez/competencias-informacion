@@ -89,6 +89,28 @@ Las redes sociales se usan cada vez más para difundir y comentar la ciencia. Su
 - Las menciones en redes miden **atención**, no calidad ni veracidad.
 - Los preprints (versiones previas a la revisión por pares) se difunden mucho en redes y pueden cambiar o no publicarse.
 
+## 5. Desinformación y bibliotecas: la infografía de IFLA
+
+La Federación Internacional de Asociaciones e Instituciones Bibliotecarias (IFLA) publicó en 2017 la infografía *¿Esta noticia es falsa?* (*How to Spot Fake News*), adaptada de un artículo de FactCheck.org de 2016. Parte de una idea: el **pensamiento crítico** es una competencia clave de la **alfabetización mediática e informacional**, y las bibliotecas deben enseñarla y defenderla. IFLA la ofrece para descargarla, imprimirla, traducirla y compartirla en bibliotecas, comunidades y redes sociales.
+
+| Paso | Qué propone la infografía | En la práctica |
+|---|---|---|
+| **1. Estudie la fuente** | Investigar el sitio web, su objetivo y su información de contacto | ¿Quién publica? ¿Hay un «Quiénes somos» y un contacto real? |
+| **2. Lea más allá** | Un titular impactante busca captar la atención: ¿cuál es la historia completa? | Leer el texto entero, no solo el titular o la miniatura |
+| **3. ¿Quién es el autor?** | Una búsqueda rápida: ¿es fiable?, ¿es real? | Buscar su perfil profesional u ORCID |
+| **4. Fuentes adicionales** | Abrir los enlaces y comprobar que los datos avalan la información | Rastrear la afirmación hasta el estudio o el documento original |
+| **5. Compruebe la fecha** | Una noticia vieja republicada no es relevante para hechos actuales | Mirar la fecha de publicación y de los datos |
+| **6. ¿Es una broma?** | Lo muy extravagante puede ser sátira | Comprobar si el medio es satírico |
+| **7. Considere su sesgo** | Las propias creencias pueden alterar el juicio | Desconfiar más de lo que confirma lo que ya pensábamos |
+| **8. Pregunte al experto** | Consultar a un bibliotecario o un sitio de verificación | Bibliotecas universitarias, Maldita.es, Newtral |
+
+Los ocho pasos de IFLA y los cuatro movimientos de SIFT (caso práctico 1) se complementan: SIFT ordena el proceso en cuatro movimientos rápidos basados en la lectura lateral, e IFLA desglosa qué comprobar en cada fuente. El paso 7, **considerar el propio sesgo**, es quizá el más difícil: tendemos a aceptar sin verificar lo que coincide con nuestras ideas (sesgo de confirmación).
+
+::: {.callout-tip appearance="simple" icon="false"}
+## Recurso descargable
+IFLA (2017). *¿Esta noticia es falsa?* [Infografía]. International Federation of Library Associations and Institutions. <https://repository.ifla.org/handle/20.500.14598/195> · [Descargar el PDF en español](https://repository.ifla.org/bitstreams/d145d100-8ec7-449e-923f-d5264d0fd305/download)
+:::
+
 ## Casos prácticos resueltos
 
 ::: {.callout-note appearance="simple" icon="false"}
@@ -145,6 +167,15 @@ Un buen informe cita evidencias verificables (enlace al DOAJ o a la base de dato
 
 
 ## Actividades
+
+::: {.clasificar #ia-u1-ifla titulo="¿Qué paso de la infografía de IFLA aplicarías primero?" categorias="Compruebe la fecha|¿Es una broma?|Considere su sesgo|Fuentes adicionales|¿Quién es el autor?"}
+- Una noticia de 2019 sobre un cierre de fronteras circula hoy como si fuera nueva → Compruebe la fecha
+- Un titular increíble en una web cuyo lema es «noticias que nunca ocurrieron» → ¿Es una broma?
+- Un artículo que confirma exactamente lo que siempre has pensado sobre un tema polémico → Considere su sesgo
+- «Un estudio demuestra…» sin enlace ni referencia al estudio → Fuentes adicionales
+- Una columna firmada por un «experto» del que no encuentras ningún rastro profesional → ¿Quién es el autor?
+:::
+
 
 ::: {.clasificar #ia-u1-falsa titulo="¿Qué tipo de información falsa es?" categorias="Información errónea|Desinformación|Información maliciosa"}
 Decide para cada caso si es información errónea, desinformación o información maliciosa.
@@ -292,6 +323,7 @@ Responde a todas las preguntas y pulsa **Mostrar respuestas**: verás en verde l
 
 | Recurso | Para qué sirve |
 |---|---|
+| [IFLA – ¿Esta noticia es falsa? (2017)](https://repository.ifla.org/handle/20.500.14598/195) | Infografía de ocho pasos para detectar noticias falsas, en español |
 | [Caulfield, M. – SIFT (The four moves)](https://hapgood.us/2019/06/19/sift-the-four-moves/) | El método SIFT explicado por su autor |
 | [ACRL – Framework for Information Literacy](https://www.ala.org/acrl/standards/ilframework) | Marco de la alfabetización informacional |
 | [Maldita.es](https://www.maldita.es/) y [Newtral](https://www.newtral.es/) | Verificadores españoles |
