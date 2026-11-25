@@ -1,0 +1,87 @@
+---
+engine: markdown
+---
+
+# Laboratorio de verificación {#sec-lab-verificacion}
+
+Este apéndice complementa la unidad 1 con una cronología de la desinformación, una herramienta para evaluar fuentes y una actividad para detectar señales de alerta.
+
+## Cronología: desinformación, ciencia y regulación
+
+```{=html}
+<style>
+.cronologia{list-style:none;padding:0;margin:1rem 0;border-left:3px solid var(--bs-primary)}
+.cronologia li{position:relative;padding:0 0 1rem 1.25rem}
+.cronologia li::before{content:"";position:absolute;left:-8px;top:.35rem;width:13px;height:13px;border-radius:50%;background:var(--bs-body-bg);border:3px solid var(--bs-primary)}
+.cr-anio{display:block;font-weight:700;font-size:1.1rem}
+</style>
+<ol class="cronologia" aria-label="Cronología de la desinformación"><li><span class="cr-anio">2016</span><span class="cr-texto">Oxford Dictionaries elige «post-truth» (posverdad) como palabra del año.</span></li><li><span class="cr-anio">2017</span><span class="cr-texto">IFLA publica la infografía «Cómo detectar noticias falsas», basada en un artículo de FactCheck.org.</span></li><li><span class="cr-anio">2018</span><span class="cr-texto">Vosoughi, Roy y Aral (<em>Science</em>) muestran que en Twitter lo falso se difunde más lejos y más rápido que lo verdadero. La UE aprueba el Código de buenas prácticas en materia de desinformación.</span></li><li><span class="cr-anio">2020</span><span class="cr-texto">La OMS alerta de una «infodemia» durante la COVID-19.</span></li><li><span class="cr-anio">2022</span><span class="cr-texto">La UE adopta el Reglamento de Servicios Digitales y refuerza el Código de buenas prácticas.</span></li><li><span class="cr-anio">2023</span><span class="cr-texto">Imágenes generadas con IA se vuelven virales como si fueran fotografías reales.</span></li><li><span class="cr-anio">2024</span><span class="cr-texto">Se aprueba el Reglamento europeo de IA, que obliga a señalar los contenidos ultrafalsos (<em>deepfakes</em>) desde agosto de 2026.</span></li></ol>
+```
+
+## Laboratorio: evalúa una fuente con el test CRAAP {#lab-craap}
+
+::: {.laboratorio}
+::: {.laboratorio-etiqueta}
+Laboratorio · se ejecuta en tu navegador
+:::
+
+El **test CRAAP**, creado en la Meriam Library de la California State University, Chico, evalúa una fuente con cinco criterios. Puntúa una fuente que estés usando (de 0 a 10) y mira su perfil.
+
+```{ojs}
+//| echo: false
+rangoC = window.Lab.rango
+viewof cActualidad = rangoC("Actualidad: ¿es reciente para tu tema? ¿se actualiza?", [0, 10], {value: 7})
+viewof cRelevancia = rangoC("Relevancia: ¿responde a tu pregunta y al nivel adecuado?", [0, 10], {value: 8})
+viewof cAutoridad = rangoC("Autoridad: ¿quién lo firma? ¿tiene credenciales y afiliación?", [0, 10], {value: 4})
+viewof cExactitud = rangoC("Exactitud: ¿aporta pruebas y fuentes verificables? ¿ha sido revisada?", [0, 10], {value: 3})
+viewof cProposito = rangoC("Propósito: ¿informa, vende, persuade o entretiene?", [0, 10], {value: 5})
+```
+
+```{ojs}
+//| echo: false
+{
+  const crit = [["Actualidad", cActualidad], ["Relevancia", cRelevancia], ["Autoridad", cAutoridad], ["Exactitud", cExactitud], ["Propósito", cProposito]];
+  const total = crit.reduce((s, c) => s + c[1], 0);
+  const peor = [...crit].sort((a, b) => a[1] - b[1])[0];
+  const barras = crit.map(([n, v], i) => `<g transform="translate(0 ${i * 34})"><text x="0" y="20" font-size="14" fill="currentColor">${n}</text><rect x="110" y="6" width="300" height="20" rx="4" fill="var(--bs-secondary-bg)"/><rect x="110" y="6" width="${v * 30}" height="20" rx="4" fill="${v < 5 ? "#b3261e" : "#1c6b3a"}"/><text x="${118 + v * 30}" y="21" font-size="13" fill="currentColor">${v}${v < 5 ? " ⚠" : ""}</text></g>`).join("");
+  const veredicto = total >= 40 && peor[1] >= 5 ? "Fuente sólida: puedes usarla, citándola correctamente." : total >= 25 ? `Úsala con cautela y contrástala con otras fuentes. Su punto débil es la ${peor[0].toLowerCase()}.` : "Fuente poco fiable: busca otra mejor antes de usarla.";
+  const d = html`<div role="status" aria-live="polite"></div>`;
+  d.innerHTML = `<svg viewBox="0 0 460 172" width="100%" style="max-width:520px" role="img" aria-label="Perfil CRAAP: ${crit.map(([n, v]) => n + " " + v).join(", ")}" font-family="inherit">${barras}</svg><p><strong>Total: ${total} de 50.</strong> ${veredicto}</p>${peor[0] === "Exactitud" || peor[0] === "Autoridad" ? '<p class="small">Pista: aplica la <strong>lectura lateral</strong> (abre otras pestañas y busca qué dicen otros sobre la fuente) antes de seguir leyendo.</p>' : ""}`;
+  return d;
+}
+```
+
+Los criterios con menos de 5 se marcan con ⚠. Una puntuación alta no sustituye al juicio crítico: el test es una guía, no una fórmula.
+:::
+
+## Actividad: ¿señal de alerta o no?
+
+Lee esta publicación ficticia y clasifica cada dato.
+
+::: {.callout-note appearance="simple" icon="false"}
+## «¡ESTUDIO DEFINITIVO! El chocolate negro cura el insomnio»
+Publicado en *SaludTotal24.info* · sin firma · fecha: «hace 3 años», compartido hoy 40 000 veces. El artículo enlaza a un estudio con 12 participantes financiado por una marca de chocolate. Al final aparece un código de descuento para comprar «chocolate terapéutico».
+:::
+
+::: {.clasificar #ia-lab-alertas titulo="Clasifica cada dato de la publicación" categorias="Señal de alerta|Dato neutro"}
+- El artículo no tiene firma → Señal de alerta // No se puede comprobar la autoría (IFLA: ¿quién es el autor?).
+- El titular dice «definitivo» y usa mayúsculas → Señal de alerta // Lenguaje sensacionalista: la ciencia rara vez es definitiva con un solo estudio.
+- El estudio tiene 12 participantes → Señal de alerta // Una muestra tan pequeña no permite generalizar.
+- El estudio lo financia una marca de chocolate → Señal de alerta // Posible conflicto de intereses.
+- Incluye un código de descuento → Señal de alerta // El propósito es vender (CRAAP: propósito).
+- Se publicó hace 3 años y circula hoy → Señal de alerta // Compruebe la fecha: puede estar superado por estudios posteriores.
+- El artículo enlaza al estudio original → Dato neutro // Es una buena práctica; ahora toca leer el estudio y comprobar qué dice de verdad.
+- Lo han compartido 40 000 personas → Dato neutro // La popularidad no dice nada sobre si es cierto.
+:::
+
+## Para practicar con casos reales
+
+- [Maldita.es](https://maldita.es) y [Newtral](https://www.newtral.es) publican verificaciones en español y se han adherido al código de principios de la red internacional de verificadores (IFCN).
+- El [Observatorio Europeo de Medios Digitales (EDMO)](https://edmo.eu) reúne investigación y verificaciones de toda la UE.
+- La [infografía de IFLA](https://repository.ifla.org/handle/20.500.14598/195) está traducida a decenas de idiomas (37 según IFLA).
+
+## Para ver y seguir aprendiendo
+
+Son enlaces, no vídeos incrustados: el vídeo se abre en la web de quien lo publica, así esta página no carga rastreadores de terceros. La mayoría está en inglés; activa los subtítulos si los necesitas.
+
+- **[Check Yourself with Lateral Reading (Crash Course Navigating Digital Information #3)](https://www.youtube.com/watch?v=GoQG6Tin-1E)** — CrashCourse, con el Stanford History Education Group y MediaWise. Unos 14 minutos sobre la lectura lateral; forma parte de una serie de 10 episodios (2019).

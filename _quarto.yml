@@ -52,6 +52,7 @@ book:
   appendices:
     - 90-citas.qmd
     - 93-listas.qmd
+    - 94-verificacion.qmd
     - 91-guia-docente.qmd
     - 92-glosario.qmd
 
