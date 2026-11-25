@@ -49,6 +49,8 @@ El **derecho de cita** (art. 32) permite incluir fragmentos de obras ajenas sin 
 
 Las **licencias Creative Commons** permiten a los autores autorizar de antemano ciertos usos. Se combinan cuatro condiciones: **BY** (reconocimiento, presente en todas), **SA** (compartir igual), **NC** (no comercial) y **ND** (sin obras derivadas). Este libro, por ejemplo, tiene licencia CC BY 4.0.
 
+![Qué permite cada licencia Creative Commons.](figuras/u3_licencias.svg){#fig-licencias fig-alt="Tabla con las seis licencias Creative Commons en filas (BY, BY-SA, BY-ND, BY-NC, BY-NC-SA, BY-NC-ND) y cuatro columnas: copiar y distribuir (todas sí), uso comercial (no en las tres NC), obras derivadas (no en las dos ND) y misma licencia (obligatoria en las dos SA)."}
+
 ## 3. Qué es el plagio
 
 **Plagiar** es presentar como propio el trabajo, las ideas o las palabras de otra persona sin reconocerlo. Pecorari y Petrić (2014) distinguen el plagio **intencionado** del que nace de no saber escribir con fuentes, sobre todo al aprender a escribir en otro idioma o en un nuevo género académico. Los dos son plagio, pero el segundo se previene aprendiendo.
@@ -63,6 +65,8 @@ Las **licencias Creative Commons** permiten a los autores autorizar de antemano 
 | **Trabajo hecho por otros** | Entregar un trabajo encargado a otra persona o generado por una IA como si fuera propio |
 
 En esta asignatura, el plagio o la copia en cualquier actividad supone **perder la nota de esa actividad**.
+
+![Del plagio al uso ético: lo que cambia no son las palabras, sino si reconoces la fuente.](figuras/u3_espectro.svg){#fig-espectro fig-alt="Seis recuadros en una línea, de rojo a verde: copia literal sin cita, mosaico, paráfrasis sin cita, paráfrasis con cita, cita textual con referencia e ideas propias distinguidas. Una flecha va de «Plagio» a «Uso ético»."}
 
 ## 4. Cómo escribir con fuentes sin plagiar
 
@@ -137,6 +141,111 @@ if (isTRUE(all.equal(as.numeric(.result), 1))) {
   list(correct = FALSE, message = "Compara original con copia.")
 }
 ```
+
+## Laboratorio: así ve un detector de coincidencias {#lab-u3-detector}
+
+::: {.laboratorio}
+::: {.laboratorio-etiqueta}
+Laboratorio · se ejecuta en tu navegador, sin enviar el texto a ningún sitio
+:::
+
+Pega un texto original y tu versión. El laboratorio divide los dos en grupos de tres palabras (**trigramas**), calcula qué proporción comparten (similitud de Jaccard) y **resalta** en tu versión las palabras que forman parte de trigramas copiados. Prueba con una copia literal, una escritura en mosaico y una paráfrasis de verdad.
+
+```{ojs}
+//| echo: false
+texto = window.Lab.texto
+area = window.Lab.area
+seleccion = window.Lab.seleccion
+rango = window.Lab.rango
+boton = window.Lab.boton
+```
+
+```{ojs}
+//| echo: false
+viewof original = area("Texto original", {rows: 4, value: "La lectura lateral consiste en salir de la página para comprobar qué dicen otras fuentes sobre ella y sobre lo que afirma."})
+viewof version = area("Tu versión", {rows: 4, value: "La lectura lateral consiste en salir de la web para comprobar lo que dicen otras fuentes sobre ella y sobre lo que afirma."})
+```
+
+```{ojs}
+//| echo: false
+{
+  const palabras = t => t.toLowerCase().normalize("NFC").replace(/[^\p{L}\p{N}\s]/gu, " ").split(/\s+/).filter(Boolean);
+  const tri = p => { const s = new Set(); for (let i = 0; i + 2 < p.length; i++) s.add(p.slice(i, i + 3).join(" ")); return s; };
+  const pa = palabras(original), pb = palabras(version), ta = tri(pa), tb = tri(pb);
+  const comunes = [...tb].filter(x => ta.has(x));
+  const union = new Set([...ta, ...tb]);
+  const j = union.size ? comunes.length / union.size : 0;
+  const marcadas = new Array(pb.length).fill(false);
+  for (let i = 0; i + 2 < pb.length; i++) if (ta.has(pb.slice(i, i + 3).join(" "))) { marcadas[i] = marcadas[i + 1] = marcadas[i + 2] = true; }
+  const veredicto = j >= 0.8 ? "casi una copia literal" : j >= 0.25 ? "muchas coincidencias: posible escritura en mosaico" : j > 0 ? "pocas coincidencias" : "sin coincidencias de tres palabras";
+  return html`<div role="status">
+    <p><strong>Similitud: ${(100 * j).toFixed(0)} %</strong> (${comunes.length} trigramas compartidos de ${union.size} distintos) · ${veredicto}.</p>
+    ${(() => { const p = document.createElement("p"); p.className = "lab-resaltado"; pb.forEach((w, i) => { if (i) p.append(" "); if (marcadas[i]) { const m = document.createElement("mark"); m.textContent = w; p.append(m); } else p.append(w); }); return p; })()}
+    <p class="small">Recuerda: una similitud baja <em>no</em> prueba que no haya plagio (una paráfrasis o una traducción sin cita lo son), y una alta tampoco lo prueba si el fragmento está citado.</p></div>`;
+}
+```
+:::
+
+## Actividades
+
+::: {.clasificar #ia-u3-plagio titulo="¿Qué tipo de plagio es?" categorias="Copia literal|Escritura en mosaico|Paráfrasis sin cita|Autoplagio|Trabajo hecho por otros|No es plagio"}
+- Copias dos párrafos de Wikipedia sin comillas ni cita → Copia literal
+- Cambias algunas palabras de un párrafo por sinónimos y mantienes su estructura → Escritura en mosaico
+- Explicas con tus palabras la idea de un artículo, pero no lo citas → Paráfrasis sin cita // La idea sigue siendo ajena.
+- Entregas en una asignatura el trabajo que ya presentaste en otra → Autoplagio
+- Entregas un ensayo generado por un asistente de IA como si fuera tuyo → Trabajo hecho por otros
+- Reproduces entre comillas una frase breve con su referencia y la comentas → No es plagio // Es una cita correcta, amparada por el derecho de cita.
+- Escribes que el agua hierve a 100 ºC a nivel del mar sin citar → No es plagio // Es conocimiento común.
+:::
+
+::: {.escenario #ia-u3-licencia titulo="¿Qué licencia Creative Commons eliges?"}
+Vas a publicar unos apuntes propios en abierto. Responde y te diremos qué licencia encaja (las cuatro respuestas son válidas: es tu decisión).
+
+### ¿Permites usos comerciales? {#cc-com}
+- [Sí, también comerciales](#cc-der-si)
+- [No, solo usos no comerciales](#cc-der-nc)
+
+### ¿Permites obras derivadas? {#cc-der-si}
+Con usos comerciales permitidos.
+
+- [Sí, y quien adapte puede elegir licencia](#cc-by)
+- [Sí, pero las adaptaciones deben llevar la misma licencia](#cc-bysa)
+- [No, solo copias sin modificar](#cc-bynd)
+
+### ¿Permites obras derivadas? {#cc-der-nc}
+Solo usos no comerciales.
+
+- [Sí, y quien adapte puede elegir licencia](#cc-bync)
+- [Sí, pero con la misma licencia](#cc-byncsa)
+- [No, solo copias sin modificar](#cc-byncnd)
+
+### CC BY {#cc-by .final .bien}
+La más abierta: solo exige reconocimiento. Es la que usan este libro y muchas revistas en acceso abierto.
+
+### CC BY-SA {#cc-bysa .final .bien}
+Reconocimiento y compartir igual: las adaptaciones deben ser igual de abiertas (como Wikipedia).
+
+### CC BY-ND {#cc-bynd .final .bien}
+Reconocimiento y sin obras derivadas: se puede redistribuir, también comercialmente, pero sin cambios.
+
+### CC BY-NC {#cc-bync .final .bien}
+Reconocimiento y no comercial.
+
+### CC BY-NC-SA {#cc-byncsa .final .bien}
+Reconocimiento, no comercial y compartir igual.
+
+### CC BY-NC-ND {#cc-byncnd .final .bien}
+La más restrictiva: solo copiar y distribuir sin cambios, sin fines comerciales y citando.
+:::
+
+::: {.callout-warning appearance="simple" icon="false"}
+## Errores frecuentes
+- **«Si cambio las palabras ya es mío».** Las ideas, los datos y la estructura también se citan.
+- **«Si está en internet, es libre».** Que algo sea accesible no significa que sea de dominio público ni que su licencia permita reutilizarlo.
+- **Citar solo al final.** La referencia en la lista no basta: cada idea ajena necesita su cita en el lugar del texto donde la usas.
+- **Fiarse del porcentaje** de la herramienta de originalidad, en un sentido o en otro.
+- **Olvidar las imágenes y las figuras**: también tienen autor y licencia.
+:::
 
 ## Reto evaluable {#reto-u3}
 

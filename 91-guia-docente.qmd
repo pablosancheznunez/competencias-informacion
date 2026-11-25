@@ -35,11 +35,19 @@ Las soluciones de referencia y los criterios de corrección de los retos no est�
 
 Las preguntas de autoevaluación de cada capítulo están exportadas a **Moodle XML** en la carpeta `moodle/` del repositorio: un fichero por capítulo y uno con todo el banco. Se importan desde *Banco de preguntas → Importar → Formato Moodle XML*. Cada pregunta conserva su explicación como retroalimentación general, y el banco sirve para preparar la prueba final y la prueba de recuperación.
 
+## Actividades interactivas y laboratorios
+
+Además de la autoevaluación, cada capítulo tiene **actividades de corrección inmediata** (ordenar, clasificar y escenarios con decisiones) y varios **laboratorios**: buscar en OpenAlex con operadores booleanos, comparar textos como un detector de coincidencias, convertir un DOI en una referencia APA, verificar los DOI que da una IA y jugar con un modelo de lenguaje en miniatura. Los laboratorios con datos en vivo consultan APIs abiertas (OpenAlex, Crossref y doi.org) directamente desde el navegador del estudiante; no se envía nada al servidor del libro. En el PDF y el EPUB las actividades aparecen en papel, con su solución.
+
+Las actividades están escritas en Markdown con la extensión `interactivos` (ver `_extensions/interactivos/interactivos.lua`), así que se pueden añadir o cambiar sin programar.
+
 ## El papel de R
 
 El libro usa R lo imprescindible: cuatro capítulos tienen un ejercicio breve de completar huecos que muestra por dentro una herramienta (operadores booleanos, orden de referencias, detección de coincidencias, verificación de DOI). El capítulo [Usar R en este libro](00-r-en-el-libro.qmd) basta como preparación. Ningún reto exige programar.
 
 ## Funciones del libro
+
+- **Diapositivas de clase**: cada capítulo tiene unas diapositivas con los objetivos, las figuras, las tablas principales, la lectura, preguntas para debatir y el reto. Están en [diapositivas/](diapositivas/index.html){target="_blank"}; pulsa F para pantalla completa y S para ver las notas.
 
 - **Progreso del estudiante**: cada capítulo muestra los ejercicios resueltos y las preguntas acertadas; la presentación resume todos. Se guarda solo en el navegador del estudiante (`localStorage`): el profesorado no lo ve.
 - **Uso sin conexión**: un *service worker* (`sw.js`) guarda las páginas y el motor de R tras la primera visita.
@@ -55,6 +63,7 @@ python3 herramientas/preparar.py        # sw.js y flujo de integración continua
 python3 herramientas/extraer_r.py       # scripts .R de cada capítulo
 python3 herramientas/moodle.py          # banco de preguntas
 python3 herramientas/figuras.py         # figuras
+python3 herramientas/diapositivas.py    # diapositivas de clase (después de quarto render)
 python3 herramientas/pdf.py             # PDF y EPUB
 quarto render
 ```

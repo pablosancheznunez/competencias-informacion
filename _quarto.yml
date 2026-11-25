@@ -2,6 +2,8 @@ project:
   type: book
   output-dir: _book
   resources:
+    - laboratorio.js
+    - fuentes
     - datos
     - webr
     - webr-repo
@@ -49,6 +51,7 @@ book:
         - 06-ia-etica.qmd
   appendices:
     - 90-citas.qmd
+    - 93-listas.qmd
     - 91-guia-docente.qmd
     - 92-glosario.qmd
 
@@ -59,6 +62,7 @@ crossref:
 
 filters:
   - webex
+  - interactivos
 
 format:
   live-html:
@@ -70,8 +74,12 @@ format:
     toc-depth: 3
     number-sections: false
     code-copy: true
+    css: fuentes/fuentes.css
+    lightbox: auto
     link-external-newwindow: true
     callout-appearance: simple
+    include-in-header:
+      - laboratorio.html
     include-after-body:
       - accesibilidad.html
       - progreso.html

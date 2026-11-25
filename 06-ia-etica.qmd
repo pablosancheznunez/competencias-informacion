@@ -79,7 +79,63 @@ El **Reglamento (UE) 2024/1689** de Inteligencia Artificial (*AI Act*) es la pri
 | **Transparencia** | Asistentes conversacionales, contenido generado (*deepfakes*) | Informar de que se interactúa con una IA o de que el contenido es artificial |
 | **Mínimo** | Filtros de correo no deseado, videojuegos | Sin obligaciones específicas |
 
+![Los cuatro niveles de riesgo del Reglamento europeo de IA.](figuras/u6_riesgos.svg){#fig-riesgos fig-alt="Pirámide de cuatro niveles, de arriba abajo: inaceptable (prohibido: puntuación social, manipulación dañina), alto (requisitos estrictos: educación, empleo, servicios esenciales), transparencia (informar: asistentes conversacionales, deepfakes) y mínimo (sin obligaciones específicas: filtros de spam, videojuegos)."}
+
 Además, el reglamento regula los **modelos de IA de uso general** (los que están detrás de los asistentes) y obliga a quienes despliegan sistemas de IA a procurar que su personal tenga un nivel suficiente de **alfabetización en IA**. Sus obligaciones se aplican de forma escalonada desde 2025. Otras normas, como el Reglamento General de Protección de Datos, siguen aplicándose a la IA.
+
+## Actividades
+
+::: {.clasificar #ia-u6-riesgo titulo="¿Qué nivel de riesgo le da el Reglamento de IA?" categorias="Inaceptable (prohibido)|Alto|Transparencia|Mínimo"}
+- Un sistema que puntúa a los ciudadanos por su comportamiento social para darles o negarles servicios → Inaceptable (prohibido)
+- Un sistema que decide la admisión de estudiantes en un máster → Alto
+- Un sistema que corrige y califica exámenes universitarios → Alto
+- Un asistente conversacional en la web de un ayuntamiento → Transparencia // Debe informar de que hablas con una IA.
+- Un vídeo generado con IA que imita a una persona real (*deepfake*) → Transparencia // Debe indicarse que es artificial.
+- Un filtro de correo no deseado → Mínimo
+- Un sistema que filtra currículos para un proceso de selección → Alto
+- Un sistema que manipula de forma subliminal a las personas y les causa daño → Inaceptable (prohibido)
+:::
+
+::: {.clasificar #ia-u6-principios titulo="¿Qué principio de Floridi y Cowls se pone en juego?" categorias="Beneficencia|No maleficencia|Autonomía|Justicia|Explicabilidad"}
+- Un sistema de concesión de becas rechaza a un estudiante y nadie sabe explicarle por qué → Explicabilidad
+- Un modelo de selección de personal penaliza los currículos de mujeres → Justicia
+- Un asistente filtra datos personales de usuarios en sus respuestas → No maleficencia
+- Una aplicación decide por ti qué asignaturas cursar sin que puedas cambiarlo → Autonomía
+- Un sistema ayuda a detectar a tiempo el abandono escolar para ofrecer apoyo → Beneficencia
+:::
+
+::: {.escenario #ia-u6-declarar titulo="¿Hay que declararlo?"}
+Estás terminando el trabajo final de una asignatura. La guía docente pide declarar cualquier uso de IA generativa.
+
+### Qué has hecho {#u6d-inicio}
+Has usado un asistente para corregir la ortografía y para proponerte sinónimos en la tabla de términos de búsqueda. Todo lo demás lo has hecho tú.
+
+- [No lo declaro: solo ha sido la ortografía](#u6d-nodeclara)
+- [Lo declaro indicando herramienta, para qué y en qué partes](#u6d-declara)
+
+### Sin declarar {#u6d-nodeclara .final .mal}
+La guía pide declarar **cualquier** uso. Aunque el uso sea menor y legítimo, ocultarlo incumple las normas de la asignatura y puede tratarse como falta de integridad.
+
+### La declaración {#u6d-declara}
+¿Cómo la redactas?
+
+- [«He usado IA.»](#u6d-vaga)
+- [«He usado (herramienta y versión) para revisar la ortografía y proponer sinónimos en la tabla del apartado 2. He revisado cada cambio; la búsqueda, la selección y las conclusiones son mías.»](#u6d-buena)
+
+### Demasiado vaga {#u6d-vaga .final .regular}
+Quien lee no sabe qué parte es tuya. Indica qué herramienta, para qué, en qué partes y cómo revisaste el resultado.
+
+### Declaración completa {#u6d-buena .final .bien}
+Transparente, concreta y asumiendo la responsabilidad del resultado: exactamente lo que piden las editoriales científicas y COPE.
+:::
+
+::: {.callout-warning appearance="simple" icon="false"}
+## Errores frecuentes
+- **Pensar que «declarar» es «confesar».** Declarar un uso permitido es una buena práctica, no una falta.
+- **Creer que la declaración traslada la responsabilidad a la herramienta.** Quien firma responde de todo el trabajo.
+- **Introducir datos personales o confidenciales** en servicios que pueden usarlos para entrenar modelos.
+- **Suponer que el Reglamento de IA solo afecta a las empresas tecnológicas**: también obliga a quienes usan (despliegan) sistemas de alto riesgo, como una universidad.
+:::
 
 ## Práctica
 

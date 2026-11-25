@@ -49,6 +49,8 @@ De ahí se siguen tres consecuencias importantes:
 - Lo que sabe depende de sus **datos de entrenamiento**: puede no conocer hechos recientes y reproducir los sesgos de esos datos.
 - La forma de pedir importa: una **instrucción** (*prompt*) clara, con contexto, objetivo y formato, da mejores resultados.
 
+![Cómo genera texto un modelo de lenguaje: estima la probabilidad de cada posible continuación y elige una; luego repite. Nada en el proceso comprueba que el resultado sea verdadero.](figuras/u5_siguiente.svg){#fig-siguiente fig-alt="El texto «La biblioteca ofrece …» entra en un recuadro «Modelo de lenguaje», que devuelve barras de probabilidad para la palabra siguiente: libros 46 %, acceso 31 %, servicios 15 %, café 5 % y dragones 3 %. Nota: probabilidades inventadas para ilustrar la idea."}
+
 Algunos sistemas combinan el modelo con un buscador o una base de documentos y responden a partir de lo que recuperan (**generación aumentada por recuperación**). Mejora la actualidad y permite enlazar fuentes, pero no elimina los errores: hay que comprobar que la fuente dice lo que el sistema afirma.
 
 ## 2. Aplicaciones innovadoras y retos técnicos
@@ -146,6 +148,162 @@ if (isTRUE(all.equal(as.numeric(.result), 0.4))) {
   list(correct = FALSE, message = "Usa base_datos dentro de %in%.")
 }
 ```
+
+## Laboratorio: un modelo de lenguaje en miniatura {#lab-u5-modelo}
+
+::: {.laboratorio}
+::: {.laboratorio-etiqueta}
+Laboratorio · se ejecuta en tu navegador
+:::
+
+Este modelo de juguete ha «leído» solo una docena de frases sobre bibliotecas e información. Para cada palabra cuenta qué palabras la siguen y con qué frecuencia (un **modelo de bigramas**). Elige una palabra de inicio y la **temperatura**: con temperatura baja elige casi siempre la palabra más probable; con temperatura alta, se arriesga más. Genera varias frases: verás textos fluidos y **plausibles**, algunos de ellos falsos. Los grandes modelos son muchísimo más complejos, pero comparten esta idea: predecir lo siguiente, no comprobar la verdad.
+
+```{ojs}
+//| echo: false
+texto = window.Lab.texto
+area = window.Lab.area
+seleccion = window.Lab.seleccion
+rango = window.Lab.rango
+boton = window.Lab.boton
+```
+
+```{ojs}
+//| echo: false
+corpus = `la biblioteca ofrece libros y revistas a los estudiantes .
+la biblioteca ofrece acceso a bases de datos científicas .
+los estudiantes buscan artículos en bases de datos .
+los estudiantes citan los artículos con su referencia .
+la referencia incluye el autor y el año del artículo .
+el autor del artículo publica en una revista científica .
+una revista científica revisa los artículos por pares .
+los artículos revisados ofrecen información fiable .
+la información fiable cita sus fuentes .
+la desinformación imita la información fiable .
+los estudiantes verifican la información en varias fuentes .
+el catálogo de la biblioteca ofrece libros y artículos .`
+modelo = {
+  const m = new Map();
+  for (const f of corpus.split("\n")) {
+    const p = f.trim().split(/\s+/);
+    for (let i = 0; i + 1 < p.length; i++) {
+      if (!m.has(p[i])) m.set(p[i], new Map());
+      const s = m.get(p[i]); s.set(p[i + 1], (s.get(p[i + 1]) || 0) + 1);
+    }
+  }
+  return m;
+}
+viewof inicio = seleccion("Palabra de inicio", [...modelo.keys()].filter(w => w !== ".").sort((a, b) => a.localeCompare(b, "es")), {value: "los"})
+viewof temperatura = rango("Temperatura", [0.1, 2], {step: 0.1, value: 1})
+viewof generar = boton("Generar otra frase")
+```
+
+```{ojs}
+//| echo: false
+probs = (w, t) => {
+  const s = modelo.get(w); if (!s) return [];
+  const pares = [...s.entries()], pesos = pares.map(([, c]) => Math.pow(c, 1 / t)), z = pesos.reduce((a, b) => a + b, 0);
+  return pares.map(([p], i) => [p, pesos[i] / z]).sort((a, b) => b[1] - a[1]);
+}
+frase = {
+  generar;
+  const out = [inicio]; let w = inicio;
+  for (let k = 0; k < 18 && w !== "."; k++) {
+    const ps = probs(w, temperatura); if (!ps.length) break;
+    let r = Math.random(), acc = 0, elegido = ps[ps.length - 1][0];
+    for (const [p, q] of ps) { acc += q; if (r <= acc) { elegido = p; break; } }
+    out.push(elegido); w = elegido;
+  }
+  return out.join(" ").replace(" .", ".");
+}
+html`<div role="status"><p><strong>Frase generada:</strong> «${frase}»</p>
+<p><strong>Qué puede seguir a «${inicio}»</strong> con temperatura ${temperatura}:</p>
+<table class="table table-sm"><thead><tr><th scope="col">Siguiente palabra</th><th scope="col">Probabilidad</th><th scope="col"><span class="visually-hidden">Barra</span></th></tr></thead><tbody>
+${probs(inicio, temperatura).slice(0, 6).map(([p, q]) => html`<tr><td>${p}</td><td>${(100 * q).toFixed(0)} %</td><td style="width:50%"><div style="height:.8rem;border-radius:2px;background:#2a78d6;width:${100 * q}%"></div></td></tr>`)}
+</tbody></table></div>`
+```
+
+**Prueba:** genera frases desde «la» con temperatura 2. ¿Alguna afirma algo que el corpus no dice? Eso es, a pequeña escala, una alucinación.
+:::
+
+## Laboratorio: verificar referencias {#lab-u5-verificar}
+
+::: {.laboratorio}
+::: {.laboratorio-etiqueta}
+Laboratorio · datos en vivo de doi.org y Crossref
+:::
+
+Pega los DOI que te ha dado una IA (uno por línea; también vale el enlace completo). El laboratorio comprueba en **doi.org** si cada DOI existe y, si es de Crossref, trae el título y el año para que compruebes que coinciden con lo que te dijo la IA.
+
+```{ojs}
+//| echo: false
+viewof lista = area("DOI (uno por línea)", {rows: 5, submit: "Verificar",
+  value: "10.1038/s41598-023-41032-5\n10.1016/j.ipm.2019.102041\n10.1093/jis/abc123\nhttps://doi.org/10.1145/3442188.3445922"})
+```
+
+```{ojs}
+//| echo: false
+verificacion = {
+  const dois = lista.split(/\n+/).map(x => x.trim().replace(/^https?:\/\/(dx\.)?doi\.org\//i, "").replace(/^doi:\s*/i, "")).filter(Boolean).slice(0, 20);
+  yield {cargando: true};
+  const uno = async d => {
+    if (!/^10\.\d{4,9}\/\S+$/.test(d)) return {d, estado: "formato", texto: "No tiene formato de DOI."};
+    try {
+      const h = await (await fetch("https://doi.org/api/handles/" + encodeURI(d))).json();
+      if (h.responseCode !== 1) return {d, estado: "no", texto: "No existe en doi.org."};
+      try {
+        const r = await fetch("https://api.crossref.org/works/" + encodeURIComponent(d));
+        if (r.ok) { const m = (await r.json()).message;
+          const anio = (m.issued?.["date-parts"]?.[0]?.[0]) ?? "s. f.";
+          return {d, estado: "si", texto: `${(m.title || [""])[0]} (${anio}). ${(m["container-title"] || [""])[0]}`}; }
+      } catch (e) {}
+      return {d, estado: "si", texto: "Existe (registrado fuera de Crossref, por ejemplo en DataCite)."};
+    } catch (e) { return {d, estado: "error", texto: "No se ha podido consultar (¿sin conexión?)."}; }
+  };
+  yield {filas: await Promise.all(dois.map(uno))};
+}
+```
+
+```{ojs}
+//| echo: false
+verificacion.cargando ? html`<p role="status">Verificando…</p>` : html`<table class="table table-sm" role="status">
+<caption>${verificacion.filas.filter(f => f.estado === "si").length} de ${verificacion.filas.length} DOI existen</caption>
+<thead><tr><th scope="col">DOI</th><th scope="col">¿Existe?</th><th scope="col">Lo que dice el registro</th></tr></thead><tbody>
+${verificacion.filas.map(f => html`<tr><td><code>${f.d}</code></td><td>${f.estado === "si" ? "✓ Sí" : f.estado === "no" ? "✗ No" : "?"}</td><td>${f.texto}</td></tr>`)}
+</tbody></table>`
+```
+
+Un DOI que existe no basta: comprueba que **el título, los autores y el año** coinciden con la referencia que te dio la IA. Walters y Wilder (2023) encontraron, además de referencias inventadas, muchas referencias reales con errores en sus datos.
+:::
+
+## Actividades
+
+::: {.clasificar #ia-u5-riesgo titulo="¿Cuánto riesgo tiene este uso?" categorias="Bajo|Medio|Alto|Inaceptable"}
+- Pedir que revise la ortografía de un texto que has escrito tú → Bajo
+- Pedir que te explique un concepto que no entiendes → Medio // Contrasta la explicación con una fuente fiable.
+- Pedir una lista de referencias para tu trabajo y copiarla sin comprobar → Alto // Muchas pueden ser inventadas.
+- Pedir que resuma un artículo que no vas a leer → Medio // El resumen puede omitir o inventar.
+- Entregar como propio un trabajo escrito por la IA → Inaceptable
+- Generar ideas para elegir el tema del trabajo → Bajo
+- Subir los datos personales de los compañeros de un grupo para que reparta tareas → Alto // Pone en riesgo la privacidad de terceros.
+:::
+
+::: {.clasificar #ia-u5-reto titulo="¿Qué reto técnico es?" categorias="Veracidad|Actualidad|Explicabilidad|Sesgos|Eficiencia|Detección"}
+- El asistente no sabe quién ganó unas elecciones del mes pasado → Actualidad
+- Nadie puede explicar por qué el modelo eligió esa respuesta → Explicabilidad
+- El modelo asocia «enfermera» con mujer y «cirujano» con hombre → Sesgos
+- Entrenar un gran modelo consume tanta electricidad como cientos de hogares en un año → Eficiencia
+- Una profesora no puede saber con seguridad si un texto lo escribió una IA → Detección
+- El modelo cita un artículo que no existe → Veracidad
+:::
+
+::: {.callout-warning appearance="simple" icon="false"}
+## Errores frecuentes
+- **Usar la IA como buscador bibliográfico** sin verificar cada referencia.
+- **Preguntarle a la propia IA si la referencia existe**: puede confirmarlo con total seguridad aunque sea falsa.
+- **Tomar la fluidez por exactitud**: un texto bien escrito no es un texto verdadero.
+- **Delegar lo que la asignatura quiere que aprendas.** La IA puede ayudarte a aprender, no aprender por ti.
+- **No declarar el uso** cuando el profesorado lo pide (capítulo siguiente).
+:::
 
 ## Reto evaluable {#reto-u5}
 

@@ -138,6 +138,94 @@ if (startsWith(as.character(.result), "Bates")) {
 }
 ```
 
+## Laboratorio: del DOI a la referencia {#lab-u4-doi}
+
+::: {.laboratorio}
+::: {.laboratorio-etiqueta}
+Laboratorio · datos en vivo de Crossref
+:::
+
+Escribe un DOI y el laboratorio pide a [Crossref](https://www.crossref.org/) la referencia en **APA 7**, igual que hace un gestor bibliográfico. Después, **revísala**: busca mayúsculas de más, cursivas que faltan o datos incompletos. Es exactamente lo que encontraron Gilmour y Cobus-Kuo (2011).
+
+```{ojs}
+//| echo: false
+texto = window.Lab.texto
+area = window.Lab.area
+seleccion = window.Lab.seleccion
+rango = window.Lab.rango
+boton = window.Lab.boton
+```
+
+```{ojs}
+//| echo: false
+viewof doi = texto("DOI", {value: "10.1016/j.pragma.2013.07.012", submit: "Obtener la referencia"})
+```
+
+```{ojs}
+//| echo: false
+referencia = {
+  const limpio = doi.trim().replace(/^https?:\/\/(dx\.)?doi\.org\//i, "").replace(/^doi:\s*/i, "");
+  if (!/^10\.\d{4,9}\/\S+$/.test(limpio)) { yield {aviso: "Eso no parece un DOI: empiezan por «10.» seguido de un prefijo y una barra."}; return; }
+  yield {cargando: true};
+  try {
+    const r = await fetch(`https://api.crossref.org/v1/works/${encodeURIComponent(limpio)}/transform`, {headers: {Accept: "text/x-bibliography; style=apa"}});
+    if (r.status === 404) { yield {aviso: "Crossref no conoce ese DOI. Puede ser de otra agencia (DataCite, por ejemplo) o no existir: compruébalo en https://doi.org/" + limpio}; return; }
+    yield {texto: (await r.text()).trim(), doi: limpio};
+  } catch (e) { yield {aviso: "No se ha podido consultar Crossref (¿estás sin conexión?)."}; }
+}
+```
+
+```{ojs}
+//| echo: false
+referencia.cargando ? html`<p role="status">Consultando Crossref…</p>` :
+referencia.aviso ? html`<p role="status">${referencia.aviso}</p>` :
+html`<div role="status"><p><strong>Referencia generada:</strong></p><blockquote class="lab-cita">${referencia.texto}</blockquote>
+<p class="small">¿Qué corregirías? En APA, el título del artículo va en minúscula salvo la primera palabra y los nombres propios, y la revista y el volumen van en cursiva (aquí se pierde el formato).</p></div>`
+```
+
+Prueba también: `10.1108/eb024320`, `10.1038/s41598-023-41032-5` o el DOI de este libro, `10.5281/zenodo.24515144` (de DataCite, no de Crossref).
+:::
+
+## Actividades
+
+::: {.ordenar #ia-u4-apa titulo="Las partes de una referencia de artículo en APA 7"}
+1. Autores
+2. Año entre paréntesis
+3. Título del artículo
+4. Nombre de la revista, en cursiva
+5. Volumen, en cursiva, y número entre paréntesis
+6. Páginas o número de artículo
+7. DOI como enlace
+:::
+
+::: {.clasificar #ia-u4-sistema titulo="¿Autor-fecha o numérico?" categorias="Autor-fecha|Numérico"}
+- (Bates, 1989) → Autor-fecha
+- [3] → Numérico
+- Lista ordenada alfabéticamente por apellido → Autor-fecha
+- Lista ordenada por orden de aparición → Numérico
+- Estilo APA 7 → Autor-fecha
+- Estilo Vancouver → Numérico
+- Estilo IEEE → Numérico
+- Estilo Harvard → Autor-fecha
+:::
+
+::: {.clasificar #ia-u4-tipo titulo="¿Qué tipo de documento es?" categorias="Artículo de revista|Libro|Capítulo de libro|Página web|Norma legal"}
+- Cruz Gil, C. (2015). *Modelos de búsqueda y recuperación de la información*. Trea. → Libro
+- Bates, M. J. (1989). The design of browsing… *Online Review*, *13*(5), 407-424. → Artículo de revista
+- Real Decreto Legislativo 1/1996… *Boletín Oficial del Estado*, 97. → Norma legal
+- Caulfield, M. (2019, 19 de junio). *SIFT (The four moves)*. Hapgood. → Página web
+- Apellido, I. (2020). Título. En I. Editora (Ed.), *Título del libro* (pp. 10-25). Editorial. → Capítulo de libro
+:::
+
+::: {.callout-warning appearance="simple" icon="false"}
+## Errores frecuentes
+- **Mezclar estilos** en el mismo trabajo (unas referencias en APA, otras copiadas de la web de la revista).
+- **No revisar lo que genera el gestor**: títulos en mayúsculas, nombres de revista abreviados o autores que faltan.
+- **Citar la base de datos en lugar del documento** («Fuente: Dialnet»).
+- **Escribir «DOI: 10.…»** en lugar del enlace completo `https://doi.org/10.…`.
+- **Citas en el texto sin referencia**, o referencias en la lista que no se citan en el texto.
+:::
+
 ## Reto evaluable {#reto-u4}
 
 ::: {.callout-important appearance="simple" icon="false"}

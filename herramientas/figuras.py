@@ -171,5 +171,109 @@ def u6_declaracion():
     guardar(fig, "u6_declaracion.svg")
 
 
+
+# ------------------------------------------------------------------ U1 (2)
+def u1_fuentes():
+    fig, ax = lienzo(9.5, 4.2, (0, 13), (0, 5.4))
+    niveles = [("Terciarias", "catálogos, bases de datos,\nenciclopedias: ayudan a encontrar", S[2]),
+               ("Secundarias", "revisiones, manuales, noticias:\nanalizan o resumen", S[1]),
+               ("Primarias", "artículos de investigación, datos,\nleyes, entrevistas: información original", S[0])]
+    for i, (t, d, c) in enumerate(niveles):
+        y = 3.6 - i * 1.5; ancho = 3 + i * 1.6; x0 = 3.2 - ancho / 2 + 0.5
+        caja(ax, x0, y, ancho, 1.2, t, fc=c, ec=c, tc=TINTA, fs=11, peso="bold")
+        ax.text(7.2, y + 0.6, d, va="center", fontsize=9.5, color=TINTA2)
+        if i < 2: flecha(ax, (x0 + ancho / 2, y), (x0 + ancho / 2, y - 0.28))
+    ax.text(0.1, 0.15, "Las flechas indican el camino que debes recorrer: de la fuente que encuentras a la original.", fontsize=9, color=TINTA2, style="italic")
+    guardar(fig, "u1_fuentes.svg")
+
+
+# ------------------------------------------------------------------ U2 (2)
+def u2_precision():
+    import numpy as np
+    fig, axs = plt.subplots(1, 2, figsize=(10, 3.6))
+    casos = [("Búsqueda estrecha (muchos AND)", 0.35, "alta precisión,\nbaja exhaustividad"),
+             ("Búsqueda amplia (muchos OR)", 0.95, "baja precisión,\nalta exhaustividad")]
+    rng = np.random.default_rng(3)
+    pts = rng.uniform(-1, 1, size=(160, 2)); pert = (pts[:, 0] + 0.2) ** 2 + pts[:, 1] ** 2 < 0.35
+    for ax, (t, r, nota) in zip(axs, casos):
+        ax.set_xlim(-1.1, 1.1); ax.set_ylim(-1.4, 1.2); ax.set_aspect("equal"); ax.axis("off")
+        rec = (pts[:, 0] - 0.0) ** 2 + (pts[:, 1]) ** 2 < r ** 2
+        ax.add_patch(Circle((0, 0), r, fill=True, fc="#eaf1fb", ec=S[0], lw=1.8))
+        ax.scatter(pts[pert, 0], pts[pert, 1], s=22, c=S[1], marker="o", label="pertinente", zorder=3)
+        ax.scatter(pts[~pert, 0], pts[~pert, 1], s=14, c="#a3a29e", marker="x", label="no pertinente", zorder=3)
+        tp, fp, fn = (rec & pert).sum(), (rec & ~pert).sum(), (~rec & pert).sum()
+        ax.set_title(t, fontsize=11, color=TINTA)
+        ax.text(0, -1.32, f"{nota}: P = {tp/(tp+fp):.2f} · E = {tp/(tp+fn):.2f}", ha="center", fontsize=9, color=TINTA2)
+    fig.legend(*axs[0].get_legend_handles_labels(), loc="lower center", ncol=2, fontsize=9, frameon=False, bbox_to_anchor=(0.5, -0.12))
+    fig.text(0.5, -0.02, "El círculo azul es lo que recupera la búsqueda. P = precisión; E = exhaustividad.", ha="center", fontsize=9, color=TINTA2)
+    guardar(fig, "u2_precision.svg")
+
+
+# ------------------------------------------------------------------ U3 (2)
+def u3_espectro():
+    fig, ax = lienzo(10, 2.8, (0, 13.4), (0, 3.4))
+    pasos = [("Copia literal\nsin cita", "#c0392b"), ("Mosaico", "#e8663a"), ("Paráfrasis\nsin cita", "#eda100"),
+             ("Paráfrasis\ncon cita", "#7fbf7b"), ("Cita textual\ncon referencia", "#1baf7a"), ("Ideas propias\ndistinguidas", "#0f8a5f")]
+    for i, (t, c) in enumerate(pasos):
+        caja(ax, 0.2 + i * 2.2, 1.2, 2.0, 1.3, t, fc=c, ec=c, tc=TINTA, fs=9.5, peso="bold")
+    flecha(ax, (0.2, 0.8), (13.2, 0.8))
+    ax.text(0.2, 0.35, "Plagio", fontsize=10, color=TINTA, fontweight="bold")
+    ax.text(13.2, 0.35, "Uso ético", fontsize=10, color=TINTA, fontweight="bold", ha="right")
+    ax.text(6.7, 2.95, "Del plagio al uso ético de las fuentes", ha="center", fontsize=11, color=TINTA)
+    guardar(fig, "u3_espectro.svg")
+
+
+def u3_licencias():
+    filas = ["CC BY", "CC BY-SA", "CC BY-ND", "CC BY-NC", "CC BY-NC-SA", "CC BY-NC-ND"]
+    cols = ["Copiar y\ndistribuir", "Uso\ncomercial", "Obras\nderivadas", "Misma\nlicencia"]
+    m = [[1, 1, 1, 0], [1, 1, 1, 2], [1, 1, 0, 0], [1, 0, 1, 0], [1, 0, 1, 2], [1, 0, 0, 0]]
+    fig, ax = plt.subplots(figsize=(8, 4.2)); ax.axis("off"); ax.set_xlim(0, 6.2); ax.set_ylim(0, 7.4)
+    for j, c in enumerate(cols): ax.text(2.4 + j * 1.0, 6.9, c, ha="center", va="center", fontsize=9.5, color=TINTA, fontweight="bold")
+    for i, f in enumerate(filas):
+        y = 5.9 - i * 0.95
+        ax.add_patch(FancyBboxPatch((0.05, y - 0.4), 6.0, 0.8, boxstyle="round,pad=0,rounding_size=0.05", fc=CAJA if i % 2 == 0 else SUP, ec="none"))
+        ax.text(0.2, y, f, va="center", fontsize=10.5, color=TINTA, fontweight="bold")
+        for j, v in enumerate(m[i]):
+            simb, col = {1: ("✓ sí", "#0f6b45"), 0: ("✗ no", "#a52a1a"), 2: ("obligatoria", "#7a5a00")}[v]
+            if j == 3 and v == 0: simb, col = ("no exige", TINTA2)
+            ax.text(2.4 + j * 1.0, y, simb, ha="center", va="center", fontsize=9.5, color=col)
+    ax.text(0.05, 0.05, "Todas exigen reconocer la autoría (BY). SA: compartir igual · NC: no comercial · ND: sin obras derivadas.", fontsize=8.5, color=TINTA2)
+    guardar(fig, "u3_licencias.svg")
+
+
+# ------------------------------------------------------------------ U5 (2)
+def u5_siguiente():
+    fig, ax = lienzo(10, 3.4, (0, 13.4), (0, 4.4))
+    caja(ax, 0.2, 1.7, 4.6, 1.0, "«La biblioteca ofrece …»", fc=SUP, ec=TINTA2, fs=11)
+    flecha(ax, (4.8, 2.2), (5.8, 2.2))
+    caja(ax, 5.8, 1.6, 2.2, 1.2, "Modelo de\nlenguaje", fs=10.5, peso="bold")
+    flecha(ax, (8.0, 2.2), (8.8, 2.2))
+    cands = [("libros", 0.46), ("acceso", 0.31), ("servicios", 0.15), ("café", 0.05), ("dragones", 0.03)]
+    for i, (w, p) in enumerate(cands):
+        y = 4.0 - i * 0.6
+        ax.text(9.0, y, w, va="center", fontsize=10, color=TINTA)
+        ax.add_patch(FancyBboxPatch((10.5, y - 0.18), 2.6 * p / 0.46, 0.36, boxstyle="round,pad=0,rounding_size=0.04", fc=S[0], ec="none"))
+        ax.text(10.55 + 2.6 * p / 0.46, y, f" {int(p*100)} %", va="center", fontsize=9, color=TINTA2)
+    ax.text(6.7, 0.3, "El modelo no consulta hechos: estima qué fragmento es más probable y repite el proceso.\nProbabilidades inventadas para ilustrar la idea.",
+            ha="center", fontsize=9, color=TINTA2)
+    guardar(fig, "u5_siguiente.svg")
+
+
+# ------------------------------------------------------------------ U6 (2)
+def u6_riesgos():
+    fig, ax = lienzo(9.5, 4.6, (0, 13), (0, 5.8))
+    niveles = [("Inaceptable", "prohibido: puntuación social, manipulación dañina", "#c0392b"),
+               ("Alto", "requisitos estrictos: educación, empleo, servicios esenciales", "#e8663a"),
+               ("Transparencia", "informar: asistentes conversacionales, deepfakes", "#eda100"),
+               ("Mínimo", "sin obligaciones específicas: filtros de spam, videojuegos", "#1baf7a")]
+    for i, (t, d, c) in enumerate(niveles):
+        y = 4.5 - i * 1.25; ancho = 2.6 + i * 1.1; x0 = 3.0 - ancho / 2
+        ax.add_patch(FancyBboxPatch((x0, y), ancho, 1.05, boxstyle="round,pad=0,rounding_size=0.06", fc=c, ec=SUP, lw=2))
+        ax.text(3.0, y + 0.52, t, ha="center", va="center", fontsize=10.5, color=TINTA, fontweight="bold")
+        ax.text(6.6, y + 0.52, d, va="center", fontsize=9.5, color=TINTA2)
+    ax.text(0.2, 0.05, "Reglamento (UE) 2024/1689: las obligaciones crecen con el riesgo.", fontsize=9, color=TINTA2, style="italic")
+    guardar(fig, "u6_riesgos.svg")
+
 if __name__ == "__main__":
     u1_lateral(); u2_booleanos(); u4_apa(); u5_alucinacion(); u6_declaracion()
+    u1_fuentes(); u2_precision(); u3_espectro(); u3_licencias(); u5_siguiente(); u6_riesgos()

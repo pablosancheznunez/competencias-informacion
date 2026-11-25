@@ -1,0 +1,42 @@
+---
+engine: markdown
+---
+
+# Listas de comprobación {#sec-listas}
+
+Listas breves para tener a mano. Puedes imprimirlas o copiarlas en tus apuntes.
+
+## Antes de creer o compartir algo
+
+- [ ] ¿Sé quién está detrás de la fuente? (Si no, investígalo fuera de la página: lectura lateral.)
+- [ ] ¿Qué intereses tiene: informar, vender, persuadir?
+- [ ] ¿Lo cuentan otras fuentes fiables e independientes, o todas copian lo mismo?
+- [ ] ¿He llegado a la fuente original (el estudio, los datos, la ley)?
+- [ ] ¿El titular dice lo mismo que el original, o lo exagera?
+- [ ] ¿La fecha importa? ¿Sigue vigente?
+
+## Antes de empezar a buscar
+
+- [ ] He escrito mi pregunta en una frase.
+- [ ] He separado los conceptos y tengo sinónimos en español y en inglés.
+- [ ] He decidido los límites: fechas, idiomas, tipos de documento.
+- [ ] Sé qué plataformas voy a usar y por qué.
+- [ ] Tengo dónde anotar la estrategia y los resultados.
+
+## Antes de entregar un trabajo
+
+- [ ] Cada idea, dato o figura ajena tiene su cita en el texto.
+- [ ] Toda cita del texto tiene su referencia, y viceversa.
+- [ ] Las citas textuales van entre comillas y con página.
+- [ ] He usado un único estilo de citación, de forma coherente.
+- [ ] He revisado las referencias que generó el gestor.
+- [ ] Las imágenes que no son mías tienen autor y licencia.
+- [ ] He declarado el uso de IA, si lo hubo y la asignatura lo pide.
+
+## Antes de usar una IA generativa
+
+- [ ] Sé qué permite el profesorado en esta actividad.
+- [ ] No voy a introducir datos personales ni documentos confidenciales.
+- [ ] Voy a verificar cada dato y cada referencia que me dé.
+- [ ] El resultado final lo reviso, lo entiendo y respondo de él.
+- [ ] Anoto la herramienta, la versión y para qué la uso, por si tengo que declararlo.

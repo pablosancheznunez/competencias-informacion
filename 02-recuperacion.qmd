@@ -71,6 +71,8 @@ Dos medidas clásicas describen una búsqueda:
 
 Suelen moverse en direcciones opuestas: añadir sinónimos con O aumenta la exhaustividad y baja la precisión; añadir conceptos con Y aumenta la precisión y baja la exhaustividad. Un trabajo de clase necesita sobre todo precisión; una revisión de la literatura necesita exhaustividad.
 
+![Precisión y exhaustividad con los mismos documentos. Una búsqueda estrecha recupera pocos documentos y casi todos pertinentes; una amplia los recupera casi todos, pero con mucho ruido.](figuras/u2_precision.svg){#fig-precision fig-alt="Dos paneles con los mismos puntos: los naranjas son documentos pertinentes y las cruces grises, no pertinentes. A la izquierda, un círculo pequeño (búsqueda estrecha) contiene solo puntos pertinentes, pero deja fuera la mayoría: precisión 1,00 y exhaustividad 0,35. A la derecha, un círculo grande (búsqueda amplia) contiene todos los pertinentes y muchas cruces: precisión 0,39 y exhaustividad 1,00."}
+
 ## 4. Plataformas generales y especializadas
 
 | Tipo | Ejemplos | Para qué |
@@ -180,6 +182,104 @@ if (isTRUE(all.equal(as.numeric(.result), 4 / 6))) {
   list(correct = FALSE, message = "Divide entre resultados.")
 }
 ```
+
+## Laboratorio: operadores booleanos en vivo {#lab-u2-openalex}
+
+::: {.laboratorio}
+::: {.laboratorio-etiqueta}
+Laboratorio · datos en vivo de OpenAlex
+:::
+
+Escribe dos conceptos (puedes usar OR, comillas y truncamiento dentro de cada uno) y pulsa **Buscar**. El libro consulta [OpenAlex](https://openalex.org/), un índice abierto con más de 250 millones de trabajos académicos, y te muestra cuántos documentos recupera cada combinación. Observa cómo AND reduce, OR amplía y NOT excluye.
+
+```{ojs}
+//| echo: false
+viewof consulta = {
+  const f = html`<form class="lab-form">
+    <div class="row g-2">
+      <div class="col-md-5"><label class="form-label" for="lab-a">Concepto A</label>
+        <input id="lab-a" name="a" class="form-control form-control-sm" value='smartphone OR "mobile phone"'></div>
+      <div class="col-md-5"><label class="form-label" for="lab-b">Concepto B</label>
+        <input id="lab-b" name="b" class="form-control form-control-sm" value='"academic performance"'></div>
+      <div class="col-md-2 d-flex align-items-end"><button class="btn btn-primary btn-sm w-100" type="submit">Buscar</button></div>
+    </div></form>`;
+  f.value = {a: f.a.value, b: f.b.value};
+  f.onsubmit = e => { e.preventDefault(); f.value = {a: f.a.value.trim(), b: f.b.value.trim()}; f.dispatchEvent(new Event("input", {bubbles: true})); };
+  return f;
+}
+```
+
+```{ojs}
+//| echo: false
+recuentos = {
+  const q = s => fetch("https://api.openalex.org/works?per-page=1&search=" + encodeURIComponent(s))
+    .then(r => { if (!r.ok) throw new Error(r.status); return r.json(); }).then(j => j.meta.count);
+  const A = `(${consulta.a})`, B = `(${consulta.b})`;
+  yield {cargando: true};
+  try {
+    const [a, b, y, o, n] = await Promise.all([q(A), q(B), q(`${A} AND ${B}`), q(`${A} OR ${B}`), q(`${A} NOT ${B}`)]);
+    yield {a, b, y, o, n};
+  } catch (e) { yield {error: true}; }
+}
+```
+
+```{ojs}
+//| echo: false
+{
+  if (recuentos.cargando) return html`<p role="status">Consultando OpenAlex…</p>`;
+  if (recuentos.error) return html`<p role="status">No se ha podido consultar OpenAlex (¿estás sin conexión?). Prueba más tarde.</p>`;
+  const filas = [["A", recuentos.a], ["B", recuentos.b], ["A AND B", recuentos.y], ["A OR B", recuentos.o], ["A NOT B", recuentos.n]];
+  const max = Math.max(...filas.map(f => f[1]), 1);
+  const fmt = new Intl.NumberFormat("es-ES");
+  return html`<table class="table table-sm lab-tabla" role="status">
+    <caption>Documentos en OpenAlex para cada combinación</caption>
+    <thead><tr><th scope="col">Búsqueda</th><th scope="col">Documentos</th><th scope="col"><span class="visually-hidden">Barra</span></th></tr></thead>
+    <tbody>${filas.map(([k, v]) => html`<tr><th scope="row"><code>${k}</code></th><td style="text-align:right">${fmt.format(v)}</td>
+      <td style="width:50%"><div style="height:.8rem;border-radius:2px;background:#2a78d6;width:${Math.max(1, 100 * v / max)}%"></div></td></tr>`)}</tbody></table>
+    <p>Comprueba: <code>A OR B</code> = <code>A</code> + <code>B</code> − <code>A AND B</code>
+    (${fmt.format(recuentos.a + recuentos.b - recuentos.y)} frente a ${fmt.format(recuentos.o)}; la diferencia se debe al motor de búsqueda).</p>`;
+}
+```
+
+**Prueba:** añade un sinónimo a A con OR y mira cómo cambia `A AND B`; después, pon una frase entre comillas y compárala con las mismas palabras sin comillas.
+:::
+
+## Actividades
+
+::: {.ordenar #ia-u2-proceso titulo="De la necesidad a la búsqueda"}
+1. Formular la pregunta en una frase
+2. Identificar los conceptos principales
+3. Buscar sinónimos y términos en inglés de cada concepto
+4. Combinar los términos con operadores
+5. Elegir las plataformas y adaptar la sintaxis
+6. Revisar los resultados y reformular la búsqueda
+:::
+
+::: {.clasificar #ia-u2-plataformas titulo="¿Dónde lo buscarías primero?" categorias="Buscador académico|Base de datos especializada|Catálogo de la biblioteca|Repositorio|Buscador general"}
+- Un manual de la bibliografía básica para pedirlo en préstamo → Catálogo de la biblioteca
+- Todos los ensayos clínicos publicados sobre un fármaco → Base de datos especializada // PubMed, por ejemplo.
+- La versión en acceso abierto de un artículo de una universidad española → Repositorio
+- Un primer vistazo a la literatura de cualquier disciplina → Buscador académico
+- La web oficial de un organismo público → Buscador general
+- Artículos sobre educación con un tesauro propio → Base de datos especializada // ERIC tiene su tesauro.
+:::
+
+::: {.clasificar #ia-u2-operadores titulo="¿Qué técnica usarías?" categorias="AND|OR|NOT|Comillas|Truncamiento"}
+- Recuperar «bibliotecas», «bibliotecario» y «bibliotecaria» a la vez → Truncamiento
+- Añadir el sinónimo «smartphone» a «móvil» → OR
+- Exigir que aparezcan a la vez «desinformación» y «vacunas» → AND
+- Buscar exactamente «alfabetización informacional» → Comillas
+- Excluir los resultados sobre rendimiento deportivo → NOT
+:::
+
+::: {.callout-warning appearance="simple" icon="false"}
+## Errores frecuentes
+- **Buscar con una frase entera** («cómo afecta el móvil al rendimiento de los universitarios»): el buscador no entiende la pregunta; separa los conceptos.
+- **Olvidar el inglés.** La mayor parte de la literatura científica está en inglés; busca en los dos idiomas.
+- **Quedarse con la primera página** de un buscador ordenado por relevancia sin revisar los filtros.
+- **No guardar la estrategia.** Sin anotar dónde, cuándo y con qué términos buscaste, no podrás repetirla ni justificarla.
+- **Usar NOT con alegría**: excluye también documentos útiles que mencionan el término de pasada.
+:::
 
 ## Reto evaluable {#reto-u2}
 

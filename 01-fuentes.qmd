@@ -79,6 +79,8 @@ Para seleccionarlas, la pregunta clave es **qué necesito**: una definición, da
 | **Exactitud** | ¿Cita sus fuentes? ¿Se puede comprobar? ¿Coincide con otras fuentes fiables? |
 | **Revisión** | ¿Ha pasado una revisión por pares, una edición profesional o ningún control? |
 
+![Tipos de fuentes. Muchas veces encontramos primero una fuente terciaria o secundaria; el trabajo consiste en llegar hasta la primaria.](figuras/u1_fuentes.svg){#fig-fuentes fig-alt="Tres niveles apilados: arriba, fuentes terciarias (catálogos, bases de datos, enciclopedias, que ayudan a encontrar); en medio, secundarias (revisiones, manuales, noticias, que analizan o resumen); abajo, primarias (artículos de investigación, datos, leyes, entrevistas: información original). Flechas descienden de las terciarias a las primarias."}
+
 ## 4. Las redes sociales como fuente de información científica
 
 Las redes sociales se usan cada vez más para difundir y comentar la ciencia. Sugimoto et al. (2017) revisan cómo las usan los investigadores y cómo se miden esas menciones (**altmetría**). Para una estudiante, las redes pueden servir para **descubrir** investigaciones y debates recientes, pero no son la fuente: hay que llegar al artículo original. Conviene recordar que:
@@ -86,6 +88,99 @@ Las redes sociales se usan cada vez más para difundir y comentar la ciencia. Su
 - Una publicación viral sobre un estudio puede exagerar o malinterpretar sus resultados.
 - Las menciones en redes miden **atención**, no calidad ni veracidad.
 - Los preprints (versiones previas a la revisión por pares) se difunden mucho en redes y pueden cambiar o no publicarse.
+
+## Actividades
+
+::: {.clasificar #ia-u1-falsa titulo="¿Qué tipo de información falsa es?" categorias="Información errónea|Desinformación|Información maliciosa"}
+Decide para cada caso si es información errónea, desinformación o información maliciosa.
+
+- Tu tía reenvía por WhatsApp un remedio contra la gripe que cree eficaz → Información errónea // Es falso, pero lo comparte sin intención de engañar.
+- Una granja de cuentas difunde un vídeo trucado de un candidato la víspera de las elecciones → Desinformación // Falso y creado para engañar.
+- Alguien publica la dirección real de una periodista para que la acosen → Información maliciosa // Es verdadero, pero se usa para causar daño.
+- Un medio publica por error una cifra de paro equivocada y la corrige al día siguiente → Información errónea // Error sin intención; la corrección es una buena práctica.
+- Una web imita el diseño de un periódico para difundir una noticia inventada → Desinformación // Suplanta la reputación de una marca conocida para engañar.
+- Se filtran correos privados auténticos de un científico, sacados de contexto para desacreditarlo → Información maliciosa // Material real usado para dañar.
+:::
+
+::: {.clasificar #ia-u1-heuristicos titulo="¿Qué atajo mental está actuando?" categorias="Reputación|Respaldo|Coherencia|Violación de expectativas|Intención persuasiva"}
+Metzger y Flanagin (2013) describen cinco heurísticos de credibilidad. Identifica cuál actúa en cada situación.
+
+- Confías en un artículo porque aparece en la web de una universidad conocida → Reputación
+- Eliges un hotel porque tiene 4000 reseñas de cinco estrellas → Respaldo
+- Crees un dato porque lo has visto en tres webs distintas → Coherencia // Ojo: tres webs pueden copiar la misma fuente.
+- Desconfías de una web llena de faltas de ortografía y anuncios emergentes → Violación de expectativas
+- Dudas de un estudio sobre azúcar financiado por un fabricante de refrescos → Intención persuasiva
+:::
+
+::: {.clasificar #ia-u1-tipos titulo="Primaria, secundaria o terciaria" categorias="Primaria|Secundaria|Terciaria"}
+- Un artículo que presenta los resultados de un experimento → Primaria
+- El conjunto de datos de una encuesta del INE → Primaria
+- Una revisión sistemática sobre el uso del móvil en clase → Secundaria
+- Una noticia de prensa que resume un estudio → Secundaria
+- El texto del Reglamento europeo de IA publicado en el DOUE → Primaria
+- Un manual universitario → Secundaria
+- El catálogo de la biblioteca de la universidad → Terciaria
+- Una base de datos bibliográfica como Dialnet → Terciaria
+:::
+
+::: {.ordenar #ia-u1-sift titulo="Los pasos de SIFT"}
+1. Parar antes de leer o compartir
+2. Investigar quién está detrás de la fuente
+3. Buscar mejor cobertura en otras fuentes fiables
+4. Rastrear la afirmación hasta su origen
+:::
+
+::: {.escenario #ia-u1-escenario titulo="Un titular sobre el café"}
+Un amigo comparte en una red social: «Un estudio demuestra que tres cafés al día reducen un 60 % el riesgo de alzhéimer». Tiene 20 000 «me gusta». (Caso inventado para practicar.)
+
+### Lo ves en tu móvil {#u1e-inicio}
+¿Qué haces?
+
+- [Lo comparto: tiene muchos «me gusta» y me gusta el café](#u1e-compartir)
+- [Me paro y miro quién lo publica](#u1e-fuente)
+
+### Compartido {#u1e-compartir .final .mal}
+Has usado el heurístico de respaldo: los «me gusta» miden popularidad, no veracidad. Y has amplificado algo sin comprobarlo.
+
+### ¿Quién lo publica? {#u1e-fuente}
+La publicación enlaza a una web de nombre «saludnaturalhoy.info» que no conoces.
+
+- [Leo con atención la web: si parece seria, me fío](#u1e-vertical)
+- [Abro otra pestaña y busco qué se dice de esa web](#u1e-lateral)
+
+### Lectura vertical {#u1e-vertical .final .regular}
+La web tiene buen diseño y un apartado «Quiénes somos» muy profesional. Pero el diseño se puede imitar: sin salir de la página no sabes quién está detrás. Prueba la lectura lateral.
+
+### Lectura lateral {#u1e-lateral}
+Descubres que la web vende complementos alimenticios. Buscas el titular en otras fuentes.
+
+- [Busco el estudio original](#u1e-original)
+- [Me basta con que lo publiquen otras webs parecidas](#u1e-coherencia)
+
+### Coherencia engañosa {#u1e-coherencia .final .mal}
+Muchas webs copian la misma nota de prensa: la repetición no es verificación. Te falta llegar al original.
+
+### El estudio original {#u1e-original}
+Encuentras el artículo: es un estudio observacional que encuentra una **asociación** modesta entre consumo de café y menor riesgo, y advierte que no prueba causalidad. No aparece ningún «60 %» para tres cafés.
+
+- [Concluyo que el titular exagera y no lo comparto (o lo comparto con el contexto)](#u1e-bien)
+- [Concluyo que el estudio es falso](#u1e-extremo)
+
+### Juicio ajustado {#u1e-bien .final .bien}
+Has hecho los cuatro movimientos de SIFT: parar, investigar la fuente, buscar mejor cobertura y rastrear el original. El titular es **exagerado**, no falso del todo: confunde asociación con causa e inventa la cifra.
+
+### Demasiado lejos {#u1e-extremo .final .regular}
+El estudio existe y es legítimo; lo que falla es el titular. Distingue entre la fuente original y cómo se ha contado.
+:::
+
+::: {.callout-warning appearance="simple" icon="false"}
+## Errores frecuentes
+- **Confundir popularidad con fiabilidad.** Los «me gusta», las visitas y las menciones miden atención.
+- **Quedarse en la página.** Un buen diseño o un «Quiénes somos» convincente no prueban nada: sal de la página.
+- **Tomar la repetición por confirmación.** Diez webs que copian la misma nota de prensa son una sola fuente.
+- **Leer solo el titular.** El titular resume (y a veces exagera) lo que dice el estudio; lee al menos el resumen original.
+- **Desconfiar de todo.** El objetivo no es el escepticismo total, sino calibrar la confianza según la evidencia.
+:::
 
 ## Práctica
 
