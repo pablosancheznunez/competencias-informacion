@@ -64,6 +64,7 @@ crossref:
 filters:
   - webex
   - interactivos
+  - glosario.lua
 
 format:
   live-html:
@@ -77,6 +78,8 @@ format:
     code-copy: true
     css: fuentes/fuentes.css
     lightbox: auto
+    footnotes-hover: true
+    reference-location: margin
     link-external-newwindow: true
     callout-appearance: simple
     include-in-header:

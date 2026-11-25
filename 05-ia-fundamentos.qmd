@@ -275,6 +275,42 @@ ${verificacion.filas.map(f => html`<tr><td><code>${f.d}</code></td><td>${f.estad
 Un DOI que existe no basta: comprueba que **el título, los autores y el año** coinciden con la referencia que te dio la IA. Walters y Wilder (2023) encontraron, además de referencias inventadas, muchas referencias reales con errores en sus datos.
 :::
 
+## Laboratorio: revisa tu instrucción {#lab-u5-prompt}
+
+::: {.laboratorio}
+::: {.laboratorio-etiqueta}
+Laboratorio · se ejecuta en tu navegador · no envía nada a ninguna IA
+:::
+
+Una buena instrucción (*prompt*) suele dar **contexto**, una **tarea** concreta, el **formato** de la respuesta, **límites** y una petición de **verificación**. Escribe la tuya: el laboratorio busca esas piezas por palabras clave y te sugiere qué añadir. Es una guía orientativa, no una nota.
+
+```{ojs}
+//| echo: false
+areaP = window.Lab.area
+viewof prompt = areaP("Tu instrucción", {rows: 5, value: "Hazme un resumen sobre el cambio climático."})
+```
+
+```{ojs}
+//| echo: false
+{
+  const t = prompt.toLowerCase();
+  const piezas = [
+    ["Contexto", /\b(soy|estudio|para (un|una|mi)|asignatura|grado|curso|trabajo de|nivel|dirigido a)\b/, "Di quién eres y para qué lo necesitas: «Soy estudiante de primero de Periodismo y preparo una exposición de 5 minutos»."],
+    ["Tarea concreta", /\b(resume|resumen|explica|compara|enumera|identifica|clasifica|propón|revisa|corrige|traduce|analiza|redacta)\b/, "Usa un verbo de acción preciso: resume, compara, clasifica…"],
+    ["Formato", /\b(tabla|lista|viñetas|párrafo|palabras|líneas|esquema|apartados|puntos)\b|\d+\s*(palabras|líneas|puntos|ideas)/, "Indica el formato y la extensión: «en una tabla de tres columnas», «en 150 palabras»."],
+    ["Límites o fuentes", /\b(solo|únicamente|sin|no inventes|basándote en|a partir de|según|del texto|adjunto|desde 20\d\d)\b/, "Acota: «basándote solo en el texto que te pego», «sin inventar datos»."],
+    ["Verificación", /\b(cita|fuentes|referencias|doi|indica (si|cuándo)|no estás seguro|incertidumbre|comprobar|verificar)\b/, "Pide que señale de dónde sale cada dato y qué no sabe: «indica las fuentes y avisa si no estás seguro»."]];
+  const res = piezas.map(([n, re, consejo]) => [n, re.test(t), consejo]);
+  const ok = res.filter((r) => r[1]).length;
+  const d = html`<div role="status" aria-live="polite"></div>`;
+  d.innerHTML = `<p><strong>${ok} de 5 piezas</strong> detectadas.</p><ul class="list-unstyled">${res.map(([n, o, c]) => `<li class="mb-1">${o ? "✓" : "○"} <strong>${n}</strong>${o ? "" : ` — ${c}`}</li>`).join("")}</ul>${ok >= 4 ? "<p>Buena instrucción. Recuerda: aunque la instrucción sea buena, verifica lo que responda la IA (apartado 5).</p>" : ""}`;
+  return d;
+}
+```
+
+Prueba a mejorar la instrucción de ejemplo hasta tener las cinco piezas y compárala con la del caso 2.
+:::
+
 ## Casos prácticos resueltos
 
 ::: {.callout-note appearance="simple" icon="false"}
