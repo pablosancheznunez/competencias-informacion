@@ -186,6 +186,66 @@ html`<div role="status"><p><strong>Referencia generada:</strong></p><blockquote 
 Prueba también: `10.1108/eb024320`, `10.1038/s41598-023-41032-5` o el DOI de este libro, `10.5281/zenodo.24515144` (de DataCite, no de Crossref).
 :::
 
+## Casos prácticos resueltos
+
+::: {.callout-note appearance="simple" icon="false"}
+## Caso 1 · Una referencia APA 7 de un artículo con DOI, paso a paso
+Datos del artículo: autores G. Wilson, J. Bryan, K. Cranston, J. Kitzes, L. Nederbragt y T. K. Teal; año 2017; título «Good enough practices in scientific computing»; revista *PLOS Computational Biology*, volumen 13, número 6, artículo e1005510; DOI 10.1371/journal.pcbi.1005510.
+
+1. **Autores:** apellido e iniciales, separados por comas, con «&» antes del último (APA 7 incluye hasta 20 autores).
+2. **Año** entre paréntesis.
+3. **Título del artículo** en tipo oración (solo mayúscula inicial y nombres propios), sin cursiva.
+4. **Revista y volumen en cursiva**, número entre paréntesis, páginas o número de artículo.
+5. **DOI** como enlace.
+
+> Wilson, G., Bryan, J., Cranston, K., Kitzes, J., Nederbragt, L., & Teal, T. K. (2017). Good enough practices in scientific computing. *PLOS Computational Biology, 13*(6), e1005510. https://doi.org/10.1371/journal.pcbi.1005510
+
+**Cita en el texto:** con tres o más autores, solo el primero y *et al.*: (Wilson et al., 2017) o Wilson et al. (2017).
+:::
+
+::: {.callout-note appearance="simple" icon="false"}
+## Caso 2 · Otros tipos de documento (APA 7)
+| Tipo | Estructura |
+|---|---|
+| **Libro** | Autor, A. (Año). *Título del libro* (ed.). Editorial. |
+| **Capítulo** | Autor, A. (Año). Título del capítulo. En E. Editor (Ed.), *Título del libro* (pp. x-y). Editorial. |
+| **Página web** | Autor u organización. (Año, día mes). *Título*. Sitio. URL |
+| **Conjunto de datos** | Autor, A. (Año). *Título del conjunto* (Versión) [Conjunto de datos]. Repositorio. https://doi.org/… |
+| **Software** | Autor, A. (Año). *Nombre* (Versión) [Software]. Repositorio. URL o DOI |
+
+Si un documento tiene DOI, úsalo siempre en lugar de la URL.
+:::
+
+::: {.callout-note appearance="simple" icon="false"}
+## Caso 3 · De la búsqueda a la bibliografía con Zotero
+1. Instala Zotero y su conector para el navegador.
+2. Desde la página del artículo o de la base de datos, pulsa el conector: Zotero guarda los metadatos (y el PDF si está disponible). Para un DOI, usa el botón de la varita mágica («Añadir elemento por identificador»).
+3. **Revisa los metadatos**: mayúsculas del título, nombres de autores, tipo de documento. Los errores de importación son frecuentes.
+4. En el procesador de textos, inserta las citas con el complemento de Zotero y genera la bibliografía en el estilo APA 7.
+5. Comprueba el resultado final con las normas: el gestor no garantiza referencias correctas si los datos de origen están mal.
+:::
+
+## Ejercicios graduados
+
+**Básico.** ¿Cómo se cita en el texto un trabajo de dos autoras, García y López, de 2023?
+
+::: {.webex-solution boton="Ver solución"}
+(García & López, 2023) entre paréntesis, o García y López (2023) en la narración. Con dos autores se citan siempre ambos.
+:::
+
+**Intermedio.** Escribe la referencia APA 7 de este conjunto de datos: autora Marta Ruiz, 2024, «Encuesta de hábitos de lectura universitaria», versión 1.2, depositado en Zenodo con DOI 10.5281/zenodo.0000000 (DOI ficticio).
+
+::: {.webex-solution boton="Ver solución"}
+Ruiz, M. (2024). *Encuesta de hábitos de lectura universitaria* (Versión 1.2) [Conjunto de datos]. Zenodo. https://doi.org/10.5281/zenodo.0000000
+:::
+
+**Avanzado.** Importa en Zotero diez referencias de tu tema desde tres fuentes distintas, corrige sus metadatos y genera la bibliografía en APA 7 y en otro estilo de tu campo. Anota qué errores encontraste.
+
+::: {.webex-solution boton="Ver orientación"}
+Errores típicos: títulos en mayúsculas, autores corporativos divididos como personas, capítulos importados como libros, falta de DOI o páginas. Anotarlos ayuda a revisar siempre lo que importa un gestor.
+:::
+
+
 ## Actividades
 
 ::: {.ordenar #ia-u4-apa titulo="Las partes de una referencia de artículo en APA 7"}

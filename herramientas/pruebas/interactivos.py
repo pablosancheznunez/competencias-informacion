@@ -22,7 +22,7 @@ try:
                 t = d["tipo"]
                 caja.scroll_into_view_if_needed()
                 if t == "ordenar":
-                    caja.get_by_role("button", name="Comprobar").click()
+                    caja.get_by_role("button", name="Comprobar", exact=True).click()
                     malo = caja.locator(".ia-aviso").inner_text()
                     n = len(d["items"])
                     for objetivo in range(n):
@@ -33,7 +33,7 @@ try:
                             caja.locator(".ia-item").nth(k).locator(".ia-mover").first.click()
                 elif t == "clasificar":
                     filas = caja.locator(".ia-fila")
-                    caja.get_by_role("button", name="Comprobar").click()
+                    caja.get_by_role("button", name="Comprobar", exact=True).click()
                     malo = caja.locator(".ia-aviso").inner_text()
                     cats = caja.evaluate("""(c) => { const d = window.IA_DATOS[c.id]; const tmp = document.createElement('div');
                         const norm = h => { tmp.innerHTML = h; return tmp.textContent.replace(/\\s+/g, ' ').trim(); };
@@ -45,7 +45,7 @@ try:
                 elif t == "zonas":
                     zs = caja.locator(".ia-zona")
                     zs.nth([i for i, z in enumerate(d["zonas"]) if not z["correcta"]][0] if not all(z["correcta"] for z in d["zonas"]) else 0).click()
-                    caja.get_by_role("button", name="Comprobar").click()
+                    caja.get_by_role("button", name="Comprobar", exact=True).click()
                     malo = caja.locator(".ia-aviso").inner_text()
                     for i in range(zs.count()):
                         pulsado = zs.nth(i).get_attribute("aria-pressed") == "true"
@@ -66,7 +66,7 @@ try:
                     for paso, (nodo, j) in enumerate(reversed(camino)):
                         caja.locator(".ia-paso").nth(paso).locator(".ia-opciones button").nth(j).click()
                 if t != "escenario":
-                    caja.get_by_role("button", name="Comprobar").click()
+                    caja.get_by_role("button", name="Comprobar", exact=True).click()
                 hecho = caja.evaluate("e => e.classList.contains('ia-hecho')")
                 aviso = caja.locator(".ia-aviso").inner_text()
                 print(("  OK  " if hecho else "  FALLA ") + f"{pag} {id_} [{t}] intento erróneo: «{malo[:50]}» → «{aviso[:50]}»")

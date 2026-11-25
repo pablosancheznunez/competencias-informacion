@@ -274,6 +274,32 @@ def u6_riesgos():
     ax.text(0.2, 0.05, "Reglamento (UE) 2024/1689: las obligaciones crecen con el riesgo.", fontsize=9, color=TINTA2, style="italic")
     guardar(fig, "u6_riesgos.svg")
 
+
+def u1_sift():
+    fig, ax = lienzo(10, 3.2, (0, 16), (0, 5))
+    pasos = [("Stop", "Para y pregúntate\nqué sabes de la fuente"), ("Investigate", "Investiga quién\npublica (lectura lateral)"), ("Find", "Busca mejor\ncobertura"), ("Trace", "Rastrea la afirmación\nhasta el original")]
+    for i, (t, st) in enumerate(pasos):
+        x = 0.3 + i * 4
+        ax.add_patch(FancyBboxPatch((x, 0.5), 3.4, 3.9, boxstyle="round,pad=0,rounding_size=0.15", fc=S[i], ec="none", alpha=0.18))
+        ax.text(x + 1.7, 3.6, t[0], ha="center", fontsize=26, fontweight="bold", color=S[i] if i != 3 else "#9a6a00")
+        ax.text(x + 1.7, 2.65, t, ha="center", fontsize=11.5, fontweight="bold", color=TINTA)
+        ax.text(x + 1.7, 1.45, st, ha="center", va="center", fontsize=9.5, color=TINTA2, linespacing=1.2)
+        if i < 3: flecha(ax, (x + 3.45, 2.45), (x + 3.95, 2.45))
+    guardar(fig, "u1_sift.svg")
+
+
+def u3_parafrasis():
+    fig, ax = lienzo(10, 2.8, (0, 16), (0, 4.4))
+    pasos = [("1. Leer", "y comprender\nel original"), ("2. Cerrar", "el texto\noriginal"), ("3. Escribir", "de memoria con tu\nestructura y palabras"), ("4. Comparar", "significado y\nredacción"), ("5. Citar", "siempre\nla fuente")]
+    for i, (t, st) in enumerate(pasos):
+        x = 0.25 + i * 3.15
+        caja(ax, x, 0.6, 2.7, 3.0, "", fc="#d6e6f8" if i < 4 else "#d3efe3")
+        ax.text(x + 1.35, 2.7, t, ha="center", fontsize=11.5, fontweight="bold", color=TINTA)
+        ax.text(x + 1.35, 1.5, st, ha="center", va="center", fontsize=9.5, color=TINTA2, linespacing=1.2)
+        if i < 4: flecha(ax, (x + 2.72, 2.1), (x + 3.13, 2.1))
+    guardar(fig, "u3_parafrasis.svg")
+
+
 if __name__ == "__main__":
     u1_lateral(); u2_booleanos(); u4_apa(); u5_alucinacion(); u6_declaracion()
-    u1_fuentes(); u2_precision(); u3_espectro(); u3_licencias(); u5_siguiente(); u6_riesgos()
+    u1_fuentes(); u2_precision(); u3_espectro(); u3_licencias(); u5_siguiente(); u6_riesgos(); u1_sift(); u3_parafrasis()

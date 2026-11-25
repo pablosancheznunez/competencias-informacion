@@ -83,6 +83,57 @@ El **Reglamento (UE) 2024/1689** de Inteligencia Artificial (*AI Act*) es la pri
 
 Además, el reglamento regula los **modelos de IA de uso general** (los que están detrás de los asistentes) y obliga a quienes despliegan sistemas de IA a procurar que su personal tenga un nivel suficiente de **alfabetización en IA**. Sus obligaciones se aplican de forma escalonada desde 2025. Otras normas, como el Reglamento General de Protección de Datos, siguen aplicándose a la IA.
 
+## Casos prácticos resueltos
+
+::: {.callout-note appearance="simple" icon="false"}
+## Caso 1 · Redactar una declaración de uso de IA
+En tu TFG usaste un asistente de IA para revisar la ortografía y para proponer una primera estructura del índice. Una declaración adecuada:
+
+> Durante la elaboración de este trabajo se utilizó [nombre de la herramienta, versión] para revisar la ortografía y la gramática del texto y para obtener una propuesta inicial de estructura del índice, que fue modificada por la autora. Todo el contenido fue redactado, revisado y verificado por la autora, que asume la responsabilidad del trabajo. No se usó IA para generar resultados, análisis ni referencias.
+
+Elementos clave: **qué herramienta**, **para qué tareas**, **qué hiciste tú** y **responsabilidad**. Consulta siempre la normativa de tu universidad y de la asignatura.
+:::
+
+::: {.callout-note appearance="simple" icon="false"}
+## Caso 2 · Datos personales en un chatbot
+Para analizar las respuestas abiertas de una encuesta, piensas pegarlas en un chatbot comercial. Contienen nombres y comentarios sobre la salud de los participantes. Problemas: son **datos personales**, algunos de **categoría especial** (salud), y el RGPD exige una base legal, información a los participantes y garantías sobre dónde y cómo se tratan. Alternativas: **anonimizar** antes (eliminar nombres e información identificable), usar herramientas aprobadas por la universidad con garantías contractuales o hacer el análisis de forma local. Ante la duda, consulta al delegado de protección de datos.
+:::
+
+::: {.callout-note appearance="simple" icon="false"}
+## Caso 3 · ¿En qué categoría de riesgo está? (Reglamento europeo de IA)
+El Reglamento (UE) 2024/1689 clasifica los usos de la IA por su riesgo:
+
+| Categoría | Ejemplos | Consecuencia |
+|---|---|---|
+| **Riesgo inaceptable** | Puntuación social de las personas; manipulación que causa daño | Prohibido |
+| **Alto riesgo** | IA para decidir el acceso a la educación o evaluar al alumnado; selección de personal | Requisitos estrictos: gestión de riesgos, datos, supervisión humana, transparencia |
+| **Riesgo de transparencia** | Chatbots; contenidos generados o manipulados (ultrafalsificaciones) | Informar de que se interactúa con una IA o de que el contenido es artificial |
+| **Riesgo mínimo** | Filtros de correo no deseado, videojuegos | Sin obligaciones específicas |
+
+Un sistema que corrige automáticamente exámenes y decide la nota estaría en la categoría de **alto riesgo**.
+:::
+
+## Ejercicios graduados
+
+**Básico.** ¿Quién es responsable del contenido de un trabajo hecho con ayuda de una IA?
+
+::: {.webex-solution boton="Ver solución"}
+La persona autora. La IA no puede ser autora ni asumir responsabilidad; quien firma responde de la exactitud y la originalidad del trabajo.
+:::
+
+**Intermedio.** Clasifica en las categorías del Reglamento: (a) un chatbot de atención al estudiante; (b) un sistema que decide la admisión a un máster; (c) un corrector ortográfico.
+
+::: {.webex-solution boton="Ver solución"}
+(a) Riesgo de transparencia: debe informar de que es una IA. (b) Alto riesgo: afecta al acceso a la educación. (c) Riesgo mínimo.
+:::
+
+**Avanzado.** Analiza un caso real o verosímil de uso de IA en tu entorno académico con los principios éticos del capítulo y propón una política breve para tu asignatura o grupo.
+
+::: {.webex-solution boton="Ver orientación"}
+Una buena política dice qué usos se permiten, cuáles no, cómo se declaran, qué pasa con los datos personales y cómo se verifica el trabajo. Debe ser coherente con la normativa de la universidad.
+:::
+
+
 ## Actividades
 
 ::: {.clasificar #ia-u6-riesgo titulo="¿Qué nivel de riesgo le da el Reglamento de IA?" categorias="Inaceptable (prohibido)|Alto|Transparencia|Mínimo"}

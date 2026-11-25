@@ -244,6 +244,67 @@ recuentos = {
 **Prueba:** añade un sinónimo a A con OR y mira cómo cambia `A AND B`; después, pon una frase entre comillas y compárala con las mismas palabras sin comillas.
 :::
 
+## Casos prácticos resueltos
+
+::: {.callout-note appearance="simple" icon="false"}
+## Caso 1 · De la pregunta a la ecuación de búsqueda
+**Pregunta:** ¿cómo afecta el uso del teléfono móvil al rendimiento académico de los estudiantes universitarios?
+
+1. **Divide la pregunta en conceptos:** (a) teléfono móvil, (b) rendimiento académico, (c) universitarios.
+2. **Reúne sinónimos y términos en inglés** para cada concepto:
+
+| Concepto | Términos |
+|---|---|
+| Teléfono móvil | «teléfono móvil», smartphone*, «mobile phone*», «cell phone*» |
+| Rendimiento académico | «rendimiento académico», «academic performance», «academic achievement», grades |
+| Universitarios | universit*, «higher education», «college student*» |
+
+3. **Combina con OR dentro de cada concepto y con AND entre conceptos:**
+
+`(smartphone* OR "mobile phone*" OR "cell phone*") AND ("academic performance" OR "academic achievement" OR grades) AND (universit* OR "higher education" OR "college student*")`
+
+4. **Limita los campos** si hay demasiado ruido: busca en título, resumen y palabras clave (en Scopus, `TITLE-ABS-KEY(...)`).
+5. **Documenta** la base de datos, la fecha, la ecuación exacta y el número de resultados.
+:::
+
+::: {.callout-note appearance="simple" icon="false"}
+## Caso 2 · Demasiados o demasiado pocos resultados
+- **12 000 resultados (poca precisión):** restringe a título y resumen; añade un concepto con AND; filtra por años, idioma o tipo de documento; usa frases exactas entre comillas.
+- **8 resultados (poca exhaustividad):** añade sinónimos con OR; usa truncamiento (`educa*` recupera educación, educativo, education…); quita el concepto menos esencial; busca en más bases de datos; revisa las referencias de los artículos relevantes (búsqueda «en bola de nieve»).
+:::
+
+::: {.callout-note appearance="simple" icon="false"}
+## Caso 3 · La misma búsqueda en tres plataformas
+| Plataforma | Fortaleza | Cuidado con |
+|---|---|---|
+| **Dialnet** | Producción en español, revistas y tesis de universidades españolas | Menor cobertura internacional |
+| **Scopus / Web of Science** | Cobertura internacional seleccionada, búsqueda por campos, citas | Acceso por suscripción institucional; menos literatura en español |
+| **Google Académico** | Amplitud, texto completo, versiones gratuitas | Poca precisión, sin búsqueda reproducible; operadores limitados (`intitle:`, comillas, `-`) |
+
+Lo recomendable es combinar: empezar en una base especializada o multidisciplinar y completar con Google Académico para localizar el texto completo.
+:::
+
+## Ejercicios graduados
+
+**Básico.** ¿Qué recupera `educa* AND (virtual OR online)`?
+
+::: {.webex-solution boton="Ver solución"}
+Documentos que contienen cualquier palabra que empiece por *educa* (educación, educativo, education, educational…) **y** al menos una de las palabras *virtual* u *online*.
+:::
+
+**Intermedio.** Escribe la ecuación de búsqueda para la pregunta: «¿Qué efecto tiene la gamificación en la motivación del alumnado de secundaria?».
+
+::: {.webex-solution boton="Ver solución"}
+Una posible solución: `(gamif* OR "serious game*" OR "game-based learning") AND (motivat* OR engagement) AND ("secondary school*" OR "secondary education" OR "high school*" OR secundaria)`. Hay otras correctas si respetan la estructura: OR dentro de cada concepto, AND entre conceptos.
+:::
+
+**Avanzado.** Ejecuta tu ecuación en dos bases de datos, anota resultados, revisa los 20 primeros de cada una y calcula qué proporción es pertinente (precisión aproximada). Propón un ajuste para mejorarla.
+
+::: {.webex-solution boton="Ver orientación"}
+Presenta una tabla con base, fecha, ecuación, número de resultados y pertinentes entre los 20 primeros. El ajuste debe justificarse: si la precisión es baja, restringir campos o añadir conceptos; si se pierden documentos clave conocidos, ampliar sinónimos.
+:::
+
+
 ## Actividades
 
 ::: {.ordenar #ia-u2-proceso titulo="De la necesidad a la búsqueda"}

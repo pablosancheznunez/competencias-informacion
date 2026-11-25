@@ -186,6 +186,57 @@ viewof version = area("Tu versión", {rows: 4, value: "La lectura lateral consis
 ```
 :::
 
+## Casos prácticos resueltos
+
+::: {.callout-note appearance="simple" icon="false"}
+## Caso 1 · Parafrasear paso a paso
+**Texto original** (inventado para el ejemplo): «La revisión por pares, pese a sus limitaciones, sigue siendo el principal mecanismo de control de calidad de la literatura científica, aunque su eficacia para detectar errores ha sido cuestionada por numerosos estudios» (Pérez, 2021, p. 14).
+
+![Cinco pasos para parafrasear sin plagiar.](figuras/u3_parafrasis.svg){#fig-u3-parafrasis fig-alt="Cinco bloques en secuencia: leer y comprender el original, cerrar el texto original, escribir de memoria con tu estructura y palabras, comparar significado y redacción, y citar siempre la fuente."}
+
+1. **Lee y comprende** el texto completo; luego **cierra** el original.
+2. **Escribe de memoria** la idea con tus palabras y tu estructura: *Aunque se discute que detecte bien los errores, la evaluación por especialistas continúa siendo la herramienta central para garantizar la calidad de lo que se publica en ciencia (Pérez, 2021).*
+3. **Compara** con el original: ¿has cambiado la estructura y el vocabulario, no solo algunos sinónimos?, ¿mantienes el significado?
+4. **Cita** la fuente aunque hayas parafraseado.
+
+**Mal ejemplo (*patchwriting*):** *La revisión por pares, a pesar de sus límites, continúa siendo el mecanismo principal de control de calidad de la literatura científica.* Cambia dos palabras y conserva la estructura: es plagio aunque se cite, porque se presenta como redacción propia.
+:::
+
+::: {.callout-note appearance="simple" icon="false"}
+## Caso 2 · Reutilizar una imagen con licencia Creative Commons
+Quieres usar en tu trabajo una fotografía de Wikimedia Commons con licencia **CC BY-SA 4.0**. La atribución completa sigue la regla **TASL**: *Title, Author, Source, License* (título, autor, fuente, licencia):
+
+> «Biblioteca de la UC3M» por Ana López, Wikimedia Commons, CC BY-SA 4.0 (enlace a la imagen y a la licencia).
+
+Si la modificas (por ejemplo, la recortas), indícalo («recortada del original»). Con **SA** (compartir igual), si publicas una obra derivada, debe llevar la misma licencia. Con **NC** (no comercial) no puedes usarla en un contexto comercial; con **ND** (sin obras derivadas) no puedes modificarla.
+:::
+
+::: {.callout-note appearance="simple" icon="false"}
+## Caso 3 · Reutilizar tu propio trabajo
+Quieres aprovechar en tu TFM tres páginas de un trabajo que entregaste en otra asignatura. Presentarlo como nuevo sin decirlo es **autoplagio**. Lo correcto: consultar las normas de la asignatura, citar tu trabajo anterior como cualquier otra fuente y reelaborar el texto, o pedir permiso al profesorado si se trata de ampliar un trabajo previo.
+:::
+
+## Ejercicios graduados
+
+**Básico.** ¿Es plagio copiar una frase entre comillas, con su referencia y página?
+
+::: {.webex-solution boton="Ver solución"}
+No: es una **cita textual** correcta. Debe usarse con moderación y para frases cuyo enunciado exacto importa.
+:::
+
+**Intermedio.** Parafrasea este texto inventado y cítalo: «Los gestores de referencias reducen los errores de formato y ahorran tiempo, pero requieren revisar los metadatos importados» (Ruiz, 2022, p. 3).
+
+::: {.webex-solution boton="Ver solución"}
+Ejemplo: *Herramientas como Zotero facilitan dar formato a la bibliografía y evitan errores, siempre que se comprueben los datos que importan automáticamente (Ruiz, 2022).* Otras redacciones son válidas si cambian estructura y vocabulario y mantienen la idea.
+:::
+
+**Avanzado.** Toma un párrafo de un trabajo tuyo, pásalo por el laboratorio de coincidencias del capítulo con una fuente que usaste y reescribe las partes con coincidencias largas. Explica qué cambios hiciste.
+
+::: {.webex-solution boton="Ver orientación"}
+Las coincidencias de pocas palabras (términos técnicos, nombres) no son un problema; las secuencias largas con estructura idéntica sí. La reescritura debe partir de la comprensión, no de sustituir sinónimos.
+:::
+
+
 ## Actividades
 
 ::: {.clasificar #ia-u3-plagio titulo="¿Qué tipo de plagio es?" categorias="Copia literal|Escritura en mosaico|Paráfrasis sin cita|Autoplagio|Trabajo hecho por otros|No es plagio"}

@@ -275,6 +275,57 @@ ${verificacion.filas.map(f => html`<tr><td><code>${f.d}</code></td><td>${f.estad
 Un DOI que existe no basta: comprueba que **el título, los autores y el año** coinciden con la referencia que te dio la IA. Walters y Wilder (2023) encontraron, además de referencias inventadas, muchas referencias reales con errores en sus datos.
 :::
 
+## Casos prácticos resueltos
+
+::: {.callout-note appearance="simple" icon="false"}
+## Caso 1 · Auditar una bibliografía generada por una IA
+Le pides a un asistente cinco referencias sobre «reproducibilidad en psicología». Procedimiento para cada referencia:
+
+1. **¿Tiene DOI?** Ábrelo en `https://doi.org/` seguido del DOI. Si no resuelve, sospecha.
+2. **Si resuelve, compara** título, autores, revista y año con lo que dio la IA: a veces el DOI existe pero corresponde a otro artículo.
+3. **Si no tiene DOI**, busca el título exacto entre comillas en Google Académico, Crossref o OpenAlex.
+4. **Clasifica** cada referencia: correcta, con errores (año, autores, páginas) o **inventada**.
+5. **No uses** ninguna referencia que no hayas localizado y leído al menos en su resumen.
+
+**Resultado frecuente:** algunas referencias son reales, otras mezclan autores de un trabajo con el título de otro, y alguna no existe. Es lo que se conoce como **alucinación**: el modelo genera texto plausible, no consulta una base de datos (salvo que use una herramienta de búsqueda, e incluso entonces conviene verificar).
+:::
+
+::: {.callout-note appearance="simple" icon="false"}
+## Caso 2 · Mejorar una instrucción (prompt)
+**Instrucción vaga:** «Háblame de la ciencia abierta».
+
+**Instrucción mejorada:**
+> Actúa como tutor de un estudiante de grado de Información y Documentación. Explica en 300 palabras qué es la ciencia abierta, con tres ejemplos de prácticas (acceso abierto, datos abiertos, preregistro). Usa un lenguaje claro. No incluyas referencias bibliográficas: las buscaré yo en bases de datos. Al final, propón tres preguntas para comprobar si lo he entendido.
+
+Elementos que mejoran el resultado: **rol**, **destinatario**, **tarea concreta**, **extensión**, **formato** y **límites** (aquí, evitar referencias que podrían ser inventadas).
+:::
+
+::: {.callout-note appearance="simple" icon="false"}
+## Caso 3 · Un dato que suena bien
+Una IA afirma: «El 70 % de los estudios de psicología no se puede replicar, según el proyecto de 2015». Verificación: el proyecto de la Open Science Collaboration (2015) replicó 100 estudios y obtuvo resultados significativos en la misma dirección en un 36 % de las réplicas, frente al 97 % de los originales. La cifra de la IA es una simplificación que mezcla criterios: hay que ir a la fuente y citar el dato exacto con su definición.
+:::
+
+## Ejercicios graduados
+
+**Básico.** ¿Por qué un modelo de lenguaje puede inventar una referencia que parece correcta?
+
+::: {.webex-solution boton="Ver solución"}
+Porque genera la secuencia de palabras más probable a partir de patrones de su entrenamiento: produce algo con la forma de una referencia (autores plausibles, revista real, año) sin comprobar que exista.
+:::
+
+**Intermedio.** Reescribe esta instrucción para que sea útil y segura: «Hazme el marco teórico de mi TFG».
+
+::: {.webex-solution boton="Ver solución"}
+Ejemplo: «Mi TFG trata sobre [tema]. Propón una estructura de cinco apartados para el marco teórico, con los conceptos clave de cada uno y los términos de búsqueda en español e inglés que debería usar en Dialnet y Scopus. No redactes el texto ni inventes referencias». Así la IA ayuda a planificar y no sustituye tu trabajo.
+:::
+
+**Avanzado.** Pide a dos asistentes de IA distintos diez referencias sobre un tema de tu interés, audítalas todas con el procedimiento del caso 1 y compara las tasas de error.
+
+::: {.webex-solution boton="Ver orientación"}
+Presenta una tabla con cada referencia, su estado (correcta, con errores, inventada) y la evidencia (DOI, búsqueda). Indica la fecha y el modelo usado: los resultados cambian con las versiones.
+:::
+
+
 ## Actividades
 
 ::: {.clasificar #ia-u5-riesgo titulo="¿Cuánto riesgo tiene este uso?" categorias="Bajo|Medio|Alto|Inaceptable"}
