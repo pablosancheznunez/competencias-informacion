@@ -32,11 +32,11 @@ Floridi, L.; Cowls, J. (2019). [A unified framework of five principles for AI in
 ### Lecturas complementarias {.unnumbered}
 
 - [Reglamento (UE) 2024/1689, de Inteligencia Artificial](https://eur-lex.europa.eu/eli/reg/2024/1689/oj?locale=es). *Diario Oficial de la Unión Europea*.
-- Bender, E. M. et al. (2021). [On the dangers of stochastic parrots](https://doi.org/10.1145/3442188.3445922). Costes ambientales y sesgos de los grandes modelos.
+- @bender2021a — Costes ambientales y sesgos de los grandes modelos.
 
 ## 1. Principios éticos de la IA
 
-Floridi y Cowls (2019) compararon las principales declaraciones internacionales sobre ética de la IA y las resumieron en **cinco principios**:
+@floridi2019 compararon las principales declaraciones internacionales sobre ética de la IA y las resumieron en **cinco principios**:
 
 | Principio | Qué significa |
 |---|---|
@@ -54,7 +54,7 @@ Los cuatro primeros vienen de la bioética; el quinto es específico de la IA y 
 - **Consentimiento, privacidad y autodeterminación informativa**: la **autodeterminación informativa** es el derecho de cada persona a decidir qué se hace con sus datos personales; en España, el Tribunal Constitucional lo reconoce como derecho fundamental a la protección de datos. Los modelos se entrenan a menudo con datos recogidos de internet sin el consentimiento de sus autores, y lo que escribes en un asistente puede almacenarse y, según el servicio, usarse para entrenar modelos. No introduzcas datos personales propios ni ajenos, ni documentos confidenciales, y revisa la configuración de privacidad del servicio.
 - **Autoría y propiedad intelectual**: un texto generado no es tuyo; además, los modelos se entrenan con obras protegidas, un debate jurídico abierto.
 - **Dependencia y aprendizaje**: delegar en la IA lo que la asignatura quiere que aprendas te impide aprenderlo.
-- **Coste ambiental**: entrenar y usar grandes modelos consume mucha energía y agua (Bender et al., 2021).
+- **Coste ambiental**: entrenar y usar grandes modelos consume mucha energía y agua [@bender2021].
 
 ## 3. Responsabilidad, autoría y transparencia
 

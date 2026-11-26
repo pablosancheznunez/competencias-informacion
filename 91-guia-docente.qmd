@@ -35,6 +35,8 @@ Las soluciones de referencia y los criterios de corrección de los retos no est�
 
 Las preguntas de autoevaluación de cada capítulo están exportadas a **Moodle XML** en la carpeta `moodle/` del repositorio: un fichero por capítulo y uno con todo el banco. Se importan desde *Banco de preguntas → Importar → Formato Moodle XML*. Cada pregunta conserva su explicación como retroalimentación general, y el banco sirve para preparar la prueba final y la prueba de recuperación.
 
+**Descarga el banco de preguntas:** [todo el libro (Moodle XML)](moodle/autoevaluacion_todo.xml) · por capítulo: [00](moodle/autoevaluacion_00_r_en_el_libro.xml) · [01](moodle/autoevaluacion_01_fuentes.xml) · [02](moodle/autoevaluacion_02_recuperacion.xml) · [03](moodle/autoevaluacion_03_etica_plagio.xml) · [04](moodle/autoevaluacion_04_referencias.xml) · [05](moodle/autoevaluacion_05_ia_fundamentos.xml) · [06](moodle/autoevaluacion_06_ia_etica.xml)
+
 ## Actividades interactivas y laboratorios
 
 Además de la autoevaluación, cada capítulo tiene **actividades de corrección inmediata** (ordenar, clasificar y escenarios con decisiones) y varios **laboratorios**: buscar en OpenAlex con operadores booleanos, comparar textos como un detector de coincidencias, convertir un DOI en una referencia APA, verificar los DOI que da una IA y jugar con un modelo de lenguaje en miniatura. Los laboratorios con datos en vivo consultan APIs abiertas (OpenAlex, Crossref y doi.org) directamente desde el navegador del estudiante; no se envía nada al servidor del libro. En el PDF y el EPUB las actividades aparecen en papel, con su solución.

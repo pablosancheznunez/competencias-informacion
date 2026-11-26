@@ -32,13 +32,13 @@ Metzger, M. J.; Flanagin, A. J. (2013). [Credibility and trust of information in
 
 ### Lecturas complementarias {.unnumbered}
 
-- Bawden, D.; Robinson, L. (2009). [The dark side of information: Overload, anxiety and other paradoxes and pathologies](https://doi.org/10.1177/0165551508095781). *Journal of Information Science*, 35(2), 180-191. La sobrecarga informativa y sus efectos.
-- Pennycook, G.; Rand, D. G. (2021). [The psychology of fake news](https://doi.org/10.1016/j.tics.2021.02.007). *Trends in Cognitive Sciences*, 25(5), 388-402. Por qué creemos y compartimos noticias falsas.
-- Sugimoto, C. R.; Work, S.; Larivière, V.; Haustein, S. (2017). [Scholarly use of social media and altmetrics: A review of the literature](https://doi.org/10.1002/asi.23833). *Journal of the Association for Information Science and Technology*, 68(9), 2037-2062.
+- @bawden2009 — La sobrecarga informativa y sus efectos.
+- @pennycook2021 — Por qué creemos y compartimos noticias falsas.
+- @sugimoto2017
 
 ## 1. Información, sobrecarga y desinformación
 
-Nunca ha sido tan fácil acceder a información, y nunca ha sido tan difícil saber cuál es fiable. Bawden y Robinson (2009) describen el «lado oscuro» de la información: la **sobrecarga informativa** (más información de la que se puede procesar), la ansiedad que provoca y otros efectos paradójicos, como sentirse peor informado cuanta más información se recibe.
+Nunca ha sido tan fácil acceder a información, y nunca ha sido tan difícil saber cuál es fiable. @bawden2009 describen el «lado oscuro» de la información: la **sobrecarga informativa** (más información de la que se puede procesar), la ansiedad que provoca y otros efectos paradójicos, como sentirse peor informado cuanta más información se recibe.
 
 En el terreno de la información falsa conviene distinguir:
 
@@ -48,11 +48,11 @@ En el terreno de la información falsa conviene distinguir:
 | **Desinformación** (*disinformation*) | Falsa y creada o difundida para engañar | Una campaña con datos inventados para influir en unas elecciones |
 | **Información maliciosa** (*malinformation*) | Verdadera, pero usada para causar daño | Difundir datos personales reales de alguien |
 
-Pennycook y Rand (2021) muestran que mucha gente comparte información falsa no tanto por sesgo ideológico como por **falta de atención**: no se para a pensar si es verdad antes de compartirla. Una pausa breve mejora el juicio.
+@pennycook2021 muestran que mucha gente comparte información falsa no tanto por sesgo ideológico como por **falta de atención**: no se para a pensar si es verdad antes de compartirla. Una pausa breve mejora el juicio.
 
 ## 2. Uso crítico, reflexivo y proactivo
 
-Metzger y Flanagin (2013) explican que, en línea, las personas no evalúan la credibilidad de forma sistemática, sino con **atajos mentales** (heurísticos): la **reputación** (una marca conocida parece fiable), el **respaldo** de otros (muchas reseñas o «me gusta»), la **coherencia** (lo que se repite en varios sitios), la **violación de expectativas** (un diseño descuidado o errores hacen desconfiar) y la **intención persuasiva** (si parece que quieren vender algo, desconfiamos). Esos atajos son útiles, pero se pueden explotar: una web falsa puede imitar una marca conocida y las reseñas se pueden comprar.
+@metzger2013 explican que, en línea, las personas no evalúan la credibilidad de forma sistemática, sino con **atajos mentales** (heurísticos): la **reputación** (una marca conocida parece fiable), el **respaldo** de otros (muchas reseñas o «me gusta»), la **coherencia** (lo que se repite en varios sitios), la **violación de expectativas** (un diseño descuidado o errores hacen desconfiar) y la **intención persuasiva** (si parece que quieren vender algo, desconfiamos). Esos atajos son útiles, pero se pueden explotar: una web falsa puede imitar una marca conocida y las reseñas se pueden comprar.
 
 Un uso crítico de la información consiste en sustituir, cuando importa, el atajo por la comprobación. Para eso funciona mejor la **lectura lateral** que la lectura vertical: en lugar de analizar a fondo la página (que puede estar diseñada para parecer fiable), se abren otras pestañas para averiguar qué dicen **otros** sobre esa fuente y esa afirmación. Es lo que hacen los verificadores profesionales.
 
@@ -83,7 +83,7 @@ Para seleccionarlas, la pregunta clave es **qué necesito**: una definición, da
 
 ## 4. Las redes sociales como fuente de información científica
 
-Las redes sociales se usan cada vez más para difundir y comentar la ciencia. Sugimoto et al. (2017) revisan cómo las usan los investigadores y cómo se miden esas menciones (**altmetría**). Para una estudiante, las redes pueden servir para **descubrir** investigaciones y debates recientes, pero no son la fuente: hay que llegar al artículo original. Conviene recordar que:
+Las redes sociales se usan cada vez más para difundir y comentar la ciencia. @sugimoto2017 revisan cómo las usan los investigadores y cómo se miden esas menciones (**altmetría**). Para una estudiante, las redes pueden servir para **descubrir** investigaciones y debates recientes, pero no son la fuente: hay que llegar al artículo original. Conviene recordar que:
 
 - Una publicación viral sobre un estudio puede exagerar o malinterpretar sus resultados.
 - Las menciones en redes miden **atención**, no calidad ni veracidad.
@@ -189,7 +189,7 @@ Decide para cada caso si es información errónea, desinformación o informació
 :::
 
 ::: {.clasificar #ia-u1-heuristicos titulo="¿Qué atajo mental está actuando?" categorias="Reputación|Respaldo|Coherencia|Violación de expectativas|Intención persuasiva"}
-Metzger y Flanagin (2013) describen cinco heurísticos de credibilidad. Identifica cuál actúa en cada situación.
+@metzger2013 describen cinco heurísticos de credibilidad. Identifica cuál actúa en cada situación.
 
 - Confías en un artículo porque aparece en la web de una universidad conocida → Reputación
 - Eliges un hotel porque tiene 4000 reseñas de cinco estrellas → Respaldo

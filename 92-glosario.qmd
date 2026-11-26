@@ -90,7 +90,7 @@ Compromiso con la honestidad, la confianza, la justicia, el respeto y la respons
 ## Referencias bibliográficas
 
 ### Cita {#gl-cita-texto}
-Marca breve en el texto que remite a la fuente usada, como (Bates, 1989) o [3]. → [Unidades 4 y 5](04-referencias.qmd)
+Marca breve en el texto que remite a la fuente usada, como [@bates1989] o [3]. → [Unidades 4 y 5](04-referencias.qmd)
 
 ### Referencia bibliográfica {#gl-referencia}
 Descripción completa de una fuente en la lista final de un trabajo. → [Unidades 4 y 5](04-referencias.qmd)

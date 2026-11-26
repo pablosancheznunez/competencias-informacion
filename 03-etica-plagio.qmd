@@ -32,7 +32,7 @@ Pecorari, D.; Petrić, B. (2014). [Plagiarism in second-language writing](https:
 ### Lecturas complementarias {.unnumbered}
 
 - [Real Decreto Legislativo 1/1996, Ley de Propiedad Intelectual](https://www.boe.es/buscar/act.php?id=BOE-A-1996-8930). Texto consolidado; el art. 32 regula las citas.
-- Creative Commons. [Licencias](https://creativecommons.org/licenses/?lang=es). Qué permite cada licencia.
+- @creativecommonssf
 
 ## 1. Ética de la información
 
@@ -53,7 +53,7 @@ Las **licencias Creative Commons** permiten a los autores autorizar de antemano 
 
 ## 3. Qué es el plagio
 
-**Plagiar** es presentar como propio el trabajo, las ideas o las palabras de otra persona sin reconocerlo. Pecorari y Petrić (2014) distinguen el plagio **intencionado** del que nace de no saber escribir con fuentes, sobre todo al aprender a escribir en otro idioma o en un nuevo género académico. Los dos son plagio, pero el segundo se previene aprendiendo.
+**Plagiar** es presentar como propio el trabajo, las ideas o las palabras de otra persona sin reconocerlo. @pecorari2014 distinguen el plagio **intencionado** del que nace de no saber escribir con fuentes, sobre todo al aprender a escribir en otro idioma o en un nuevo género académico. Los dos son plagio, pero el segundo se previene aprendiendo.
 
 | Tipo | Qué es |
 |---|---|

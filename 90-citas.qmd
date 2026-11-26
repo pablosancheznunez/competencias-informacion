@@ -10,12 +10,12 @@ Ejemplos de referencias en estilo **APA, 7.ª edición**, con documentos que apa
 
 | Caso | Cita parentética | Cita narrativa |
 |---|---|---|
-| Un autor | (Bates, 1989) | Bates (1989) |
-| Dos autores | (Metzger y Flanagin, 2013) | Metzger y Flanagin (2013) |
-| Tres o más | (Sugimoto et al., 2017) | Sugimoto et al. (2017) |
+| Un autor | [@bates1989] | @bates1989 |
+| Dos autores | [@metzger2013] | @metzger2013 |
+| Tres o más | [@sugimoto2017] | @sugimoto2017 |
 | Organización | (American Psychological Association, 2020) | American Psychological Association (2020) |
 | Cita textual | (Bates, 1989, p. 410) | Bates (1989, p. 410) |
-| Varias obras | (Bates, 1989; Marchionini, 2006) | — |
+| Varias obras | [@bates1989; Marchionini, 2006) | — |
 
 En español se usa «y» entre dos autores; en inglés, «&» dentro del paréntesis y «and» en la cita narrativa. Las citas textuales de menos de 40 palabras van entre comillas; las más largas, en un bloque sangrado sin comillas.
 

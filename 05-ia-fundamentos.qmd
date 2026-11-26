@@ -32,8 +32,8 @@ Walters, W. H.; Wilder, E. I. (2023). [Fabrication and errors in the bibliograph
 
 ### Lecturas complementarias {.unnumbered}
 
-- Kasneci, E. et al. (2023). [ChatGPT for good? On opportunities and challenges of large language models for education](https://doi.org/10.1016/j.lindif.2023.102274). *Learning and Individual Differences*, 103, 102274.
-- Bender, E. M.; Gebru, T.; McMillan-Major, A.; Shmitchell, S. (2021). [On the dangers of stochastic parrots: Can language models be too big?](https://doi.org/10.1145/3442188.3445922) En *Proceedings of FAccT '21* (pp. 610-623). ACM.
+- @kasneci2023
+- @bender2021
 
 ::: {.callout-note appearance="simple"}
 El bloque de IA generativa ocupa las unidades 6 a 9 del programa. Este capítulo cubre los fundamentos, las aplicaciones y los retos técnicos (unidades 6 y 7); el siguiente, la ética, la autoría y la regulación (unidades 8 y 9).
@@ -45,7 +45,7 @@ La **inteligencia artificial generativa** produce contenido nuevo (texto, imáge
 
 De ahí se siguen tres consecuencias importantes:
 
-- El modelo produce lo **plausible**, no necesariamente lo **verdadero**. Bender et al. (2021) los llamaron, de forma crítica, «loros estocásticos»: combinan formas lingüísticas sin acceso propio al significado ni a los hechos.
+- El modelo produce lo **plausible**, no necesariamente lo **verdadero**. @bender2021 los llamaron, de forma crítica, «loros estocásticos»: combinan formas lingüísticas sin acceso propio al significado ni a los hechos.
 - Lo que sabe depende de sus **datos de entrenamiento**: puede no conocer hechos recientes y reproducir los sesgos de esos datos.
 - La forma de pedir importa: una **instrucción** (*prompt*) clara, con contexto, objetivo y formato, da mejores resultados.
 
@@ -71,13 +71,13 @@ Sus **retos técnicos** marcan las líneas de investigación abiertas:
 
 ## 3. Alucinaciones
 
-Una **alucinación** es una respuesta que parece correcta pero es falsa o inventada. En el trabajo académico, la más peligrosa es la **referencia inventada**: un artículo con autores, título, revista y DOI verosímiles que no existe. Walters y Wilder (2023) pidieron a ChatGPT revisiones bibliográficas breves y comprobaron cada referencia: una gran parte de las citas de GPT-3.5 eran inventadas, y con GPT-4 seguía habiendo una proporción menor pero apreciable; además, muchas referencias reales tenían errores.
+Una **alucinación** es una respuesta que parece correcta pero es falsa o inventada. En el trabajo académico, la más peligrosa es la **referencia inventada**: un artículo con autores, título, revista y DOI verosímiles que no existe. @walters2023 pidieron a ChatGPT revisiones bibliográficas breves y comprobaron cada referencia: una gran parte de las citas de GPT-3.5 eran inventadas, y con GPT-4 seguía habiendo una proporción menor pero apreciable; además, muchas referencias reales tenían errores.
 
 ![Cómo surge una referencia inventada. El modelo combina piezas plausibles (un autor real, una revista real, un título del tema) en una referencia que no existe; solo la verificación en una base de datos lo detecta.](figuras/u5_alucinacion.svg){#fig-alucinacion fig-alt="A la izquierda, tres piezas: un apellido de autor del área, el nombre de una revista real y un título sobre el tema. Se combinan en una referencia completa y verosímil. Una flecha lleva a una lupa de verificación en una base de datos, que devuelve: no encontrada."}
 
 ## 4. Usos responsables en el estudio
 
-Kasneci et al. (2023) revisan oportunidades (explicaciones adaptadas, apoyo a la escritura, práctica personalizada) y riesgos (dependencia, errores, sesgos, plagio). Un criterio práctico es distinguir los usos según lo que delegas:
+@kasneci2023 revisan oportunidades (explicaciones adaptadas, apoyo a la escritura, práctica personalizada) y riesgos (dependencia, errores, sesgos, plagio). Un criterio práctico es distinguir los usos según lo que delegas:
 
 | Uso | Riesgo | Buenas prácticas |
 |---|---|---|
@@ -272,7 +272,7 @@ ${verificacion.filas.map(f => html`<tr><td><code>${f.d}</code></td><td>${f.estad
 </tbody></table>`
 ```
 
-Un DOI que existe no basta: comprueba que **el título, los autores y el año** coinciden con la referencia que te dio la IA. Walters y Wilder (2023) encontraron, además de referencias inventadas, muchas referencias reales con errores en sus datos.
+Un DOI que existe no basta: comprueba que **el título, los autores y el año** coinciden con la referencia que te dio la IA. @walters2023 encontraron, además de referencias inventadas, muchas referencias reales con errores en sus datos.
 :::
 
 ## Laboratorio: revisa tu instrucción {#lab-u5-prompt}

@@ -31,14 +31,14 @@ Gilmour, R.; Cobus-Kuo, L. (2011). [Reference management software: A comparative
 
 ### Lecturas complementarias {.unnumbered}
 
-- Foltýnek, T. et al. (2020). [Testing of support tools for plagiarism detection](https://doi.org/10.1186/s41239-020-00192-4). *International Journal of Educational Technology in Higher Education*, 17, 46. Qué detectan y qué no las herramientas de originalidad.
-- American Psychological Association. [APA Style](https://apastyle.apa.org/). Guía oficial del estilo APA 7.
+- @foltynek2020 — Qué detectan y qué no las herramientas de originalidad.
+- @americanpsychologicasf — Guía oficial del estilo APA 7.
 
 ## 1. Por qué citar
 
 Citar sirve para **reconocer** el trabajo ajeno, **demostrar** en qué se apoya lo que dices, **permitir** a quien lee encontrar las fuentes y **distinguir** tus ideas de las de otros. En un trabajo académico hay dos elementos relacionados:
 
-- La **cita en el texto**: una marca breve donde usas la fuente, como (Bates, 1989) o [3].
+- La **cita en el texto**: una marca breve donde usas la fuente, como [@bates1989] o [3].
 - La **referencia bibliográfica**: la descripción completa de la fuente en la lista final.
 
 ## 2. Estilos de citación
@@ -47,12 +47,12 @@ Un **estilo** fija qué datos se incluyen, en qué orden y con qué puntuación.
 
 | Sistema | Cita en el texto | Orden de la lista | Estilos |
 |---|---|---|---|
-| **Autor-fecha** | (Metzger y Flanagin, 2013) | Alfabético por apellido | APA 7, Harvard, Chicago autor-fecha |
+| **Autor-fecha** | [@metzger2013] | Alfabético por apellido | APA 7, Harvard, Chicago autor-fecha |
 | **Numérico** | [1] o superíndice | Por orden de aparición | Vancouver, IEEE, ISO 690 numérico |
 
 En este grado se usa con frecuencia **APA 7.ª edición**. Lo importante es elegir un estilo, aplicarlo **de forma coherente** y seguir el que indique cada profesor o revista.
 
-![Anatomía de una referencia de artículo en estilo APA 7: autores, año, título del artículo, revista en cursiva, volumen en cursiva, número, páginas y DOI como enlace.](figuras/u4_apa.svg){#fig-apa fig-alt="La referencia de Bates (1989) en estilo APA, con cada parte subrayada en un color y rotulada debajo: autora, año, título del artículo, revista, volumen, número, páginas y DOI."}
+![Anatomía de una referencia de artículo en estilo APA 7: autores, año, título del artículo, revista en cursiva, volumen en cursiva, número, páginas y DOI como enlace.](figuras/u4_apa.svg){#fig-apa fig-alt="La referencia de @bates1989 en estilo APA, con cada parte subrayada en un color y rotulada debajo: autora, año, título del artículo, revista, volumen, número, páginas y DOI."}
 
 ## 3. Referencias de los tipos de documento más frecuentes (APA 7)
 
@@ -68,7 +68,7 @@ El **DOI** (*Digital Object Identifier*) es un identificador permanente de un do
 
 ## 4. Gestores de referencias
 
-Un **gestor de referencias** guarda los documentos con sus datos, los organiza, inserta las citas en el procesador de textos y genera la bibliografía en cualquier estilo. Gilmour y Cobus-Kuo (2011) compararon varios gestores y encontraron que **todos cometen errores** al generar las referencias (mayúsculas, datos que faltan, formatos de nombres), así que **siempre hay que revisarlas**. Los más usados son **[Zotero](https://www.zotero.org/)** (libre y gratuito), Mendeley y EndNote.
+Un **gestor de referencias** guarda los documentos con sus datos, los organiza, inserta las citas en el procesador de textos y genera la bibliografía en cualquier estilo. @gilmour2011 compararon varios gestores y encontraron que **todos cometen errores** al generar las referencias (mayúsculas, datos que faltan, formatos de nombres), así que **siempre hay que revisarlas**. Los más usados son **[Zotero](https://www.zotero.org/)** (libre y gratuito), Mendeley y EndNote.
 
 Un flujo de trabajo recomendado:
 
@@ -80,7 +80,7 @@ Un flujo de trabajo recomendado:
 
 ## 5. Herramientas de análisis de originalidad
 
-Las universidades usan programas que comparan los trabajos con grandes bases de textos y señalan las coincidencias. Foltýnek et al. (2020) evaluaron muchas de estas herramientas y concluyeron que detectan bien la copia literal, pero tienen dificultades con las modificaciones (paráfrasis, sinónimos, traducciones) y que ninguna es perfecta. El informe de coincidencias es un **indicio**, no un veredicto: una cita bien hecha coincide con su fuente y no es plagio, y una paráfrasis sin cita puede no coincidir y sí serlo.
+Las universidades usan programas que comparan los trabajos con grandes bases de textos y señalan las coincidencias. @foltynek2020 evaluaron muchas de estas herramientas y concluyeron que detectan bien la copia literal, pero tienen dificultades con las modificaciones (paráfrasis, sinónimos, traducciones) y que ninguna es perfecta. El informe de coincidencias es un **indicio**, no un veredicto: una cita bien hecha coincide con su fuente y no es plagio, y una paráfrasis sin cita puede no coincidir y sí serlo.
 
 ## Práctica en R: componer y ordenar referencias
 
@@ -125,7 +125,7 @@ La función que ordena un vector es `sort()`.
 ordenadas <- sort(refs)
 ordenadas[1]
 ```
-Bates (1989): «Bat» va antes que «Baw». Los gestores ordenan así, letra a letra.
+@bates1989: «Bat» va antes que «Baw». Los gestores ordenan así, letra a letra.
 :::
 
 ```{webr}
@@ -145,7 +145,7 @@ if (startsWith(as.character(.result), "Bates")) {
 Laboratorio · datos en vivo de Crossref
 :::
 
-Escribe un DOI y el laboratorio pide a [Crossref](https://www.crossref.org/) la referencia en **APA 7**, igual que hace un gestor bibliográfico. Después, **revísala**: busca mayúsculas de más, cursivas que faltan o datos incompletos. Es exactamente lo que encontraron Gilmour y Cobus-Kuo (2011).
+Escribe un DOI y el laboratorio pide a [Crossref](https://www.crossref.org/) la referencia en **APA 7**, igual que hace un gestor bibliográfico. Después, **revísala**: busca mayúsculas de más, cursivas que faltan o datos incompletos. Es exactamente lo que encontraron @gilmour2011.
 
 ```{ojs}
 //| echo: false
@@ -259,7 +259,7 @@ Errores típicos: títulos en mayúsculas, autores corporativos divididos como p
 :::
 
 ::: {.clasificar #ia-u4-sistema titulo="¿Autor-fecha o numérico?" categorias="Autor-fecha|Numérico"}
-- (Bates, 1989) → Autor-fecha
+- [@bates1989] → Autor-fecha
 - [3] → Numérico
 - Lista ordenada alfabéticamente por apellido → Autor-fecha
 - Lista ordenada por orden de aparición → Numérico
